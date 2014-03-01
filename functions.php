@@ -18,10 +18,15 @@ function enqueue_scripts_method() {
 	wp_register_script('slideshowjs',$slideshowjs);
 	wp_enqueue_script( 'slideshowjs',array('jquery'));
 
+	// Packery
+	$packeryjs = get_template_directory_uri() . '/js/packery.pkgd.min.js';
+	wp_register_script('packeryjs',$packeryjs);
+	wp_enqueue_script( 'packeryjs',array('jquery'));
+
 	// Theme JS
 	$themejs = get_template_directory_uri() . '/js/calcott.js';
 	wp_register_script('themejs',$themejs);
-	wp_enqueue_script( 'themejs',array('jquery','slideshowjs'));
+	wp_enqueue_script( 'themejs',array('jquery','slideshowjs','packeryjs'));
 	
 	// Fonts CSS
 	$fontscss = get_template_directory_uri() . '/fonts/fonts.css';

@@ -36,3 +36,5 @@
 <div class="header">
 <h1><span><?php bloginfo('name'); ?></span></h1>
 </div>
+
+<div class="content">

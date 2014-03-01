@@ -1,3 +1,5 @@
+</div>
+
 <div class="footer">
 
 <div class="address">

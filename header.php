@@ -33,8 +33,13 @@
 
 <div class="layout">
 
-<div class="header">
+<div class="header"><div class="inner">
 <h1><span><?php bloginfo('name'); ?></span></h1>
-</div>
+
+<?php if ( !is_front_page() ) : ?>
+	<h2><?php the_title(); ?></h2>
+<?php endif; ?>
+
+</div></div>
 
 <div class="content">

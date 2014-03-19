@@ -43,6 +43,12 @@ function enqueue_scripts_method() {
 add_action('wp_enqueue_scripts', 'enqueue_scripts_method');
 
 
+function register_my_menu() {
+	register_nav_menu( 'site-navigation', __( 'Site Navigation' ) );
+}
+add_action( 'init', 'register_my_menu' );
+
+
 // Includes
 
 require_once( 'functions/gallery.php' );

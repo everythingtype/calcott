@@ -26,6 +26,8 @@
 		<meta name="msapplication-TileColor" content="#000000"/> 
 		<meta name="msapplication-TileImage" content="<?php echo get_stylesheet_directory_uri() ?>/images/favicons/favicon-144.png"/>
 
+		<link href="//fnt.webink.com/wfs/webink.css/?project=3F9A2281-0205-420D-9C4C-F7FFB1920DFC&fonts=F06E7859-C7AE-7BC9-DA36-BA8CCFC1BFEC:f=PxGrotesk-BoldIta,B0CBCA70-418F-4482-421C-88B41ECCD5FA:f=PxGrotesk-Bold" rel="stylesheet" type="text/css"/>
+
 		<?php wp_head(); ?>
 
 </head>
@@ -43,3 +45,21 @@
 </div></div>
 
 <div class="content">
+	
+	<div class="sitenav">
+	<?php if ( is_front_page() ) : 
+		$linkBase = '';
+	else :
+		$linkBase = '/';
+	endif;
+	?>
+
+		<ul>
+		<li><a href="<?php echo $linkBase; ?>#portfolios">Portfolios</a></li>
+		<li><a href="<?php echo $linkBase; ?>#projects">Projects</a></li>
+		<li><a href="<?php echo $linkBase; ?>#about">About &amp; Contact</a></li>
+		<li><a href="<?php echo $linkBase; ?>#updates">Updates</a></li>
+		<li><a href="<?php echo $linkBase; ?>#other">Other Stuff</a></li>
+		</ul>
+
+	</div>

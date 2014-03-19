@@ -1,8 +1,13 @@
 /*
 Theme Name: Nicholas Calcott
+
+
+PxGrotesk-Bold
+PxGrotesk-BoldIta
+
 */
 
-body { font-family: sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 20px; line-height: 1.5; background: #fff; color: #282828; margin: 0; padding: 0; }
+body { font-family: 'PxGrotesk-Bold', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 20px; line-height: 1.5; background: #fff; color: #282828; margin: 0; padding: 0; }
 
 a {text-decoration: none; }
 
@@ -14,16 +19,21 @@ h3 { font-size: 20px; }
 
 .header {  padding: 40px 0 26px 0; }
 .header .inner { border-bottom: 1px solid #E2E2E3; overflow: hidden; text-align: center; }
-.header h1 { font-size: 20px; margin: 0; float: left }
-.header h2 { font-size: 20px; margin: 0 200px;  }
+.header h1 { font-size: 20px; margin: 0; float: left; font-weight: normal; }
+.header h2 { font-size: 20px; margin: 0 200px;  font-weight: normal; }
 	
 .header a.showinfo { cursor: pointer; font-size: 14px; color: #fff; background: #8a8b8e; padding: 0 .25em; margin-left: 1.25em; display: inline-block; line-height: 1.2; }
 .header a.showinfo.active { background: #3e7be4; }
 		
 .content { padding-bottom: 60px; position: relative; }
 
+.sitenav { position: absolute; top: -.5em; z-index: 1; font-size: 20px; line-height: 1.55; }
+.sitenav ul { margin: 0; padding: 0; list-style: none; }
+.sitenav li { margin: 0; padding: 0;}
+.sitenav a { color: #8a8b8e; background: #fff; display: inline-block; padding: 0 .25em 0 0; margin-bottom: 7px; }
+
 .infobox { width: 100%; margin-top: 100px; position: absolute; top: 0; display: none; }
-.infobox .inner { border: 2px solid #3e7be4; background: #fff; max-width: 550px; margin: auto; z-index: 1; position: relative; }
+.infobox .inner { border: 2px solid #3e7be4; background: #fff; max-width: 550px; margin: auto; z-index: 1; position: relative; display: none;}
 .infobox .inner .padding { padding: 45px; }
 .infobox h2 { margin: 0 0 1em 0; font-size: 32px; line-height: 1.1; }
 .infobox a.close { cursor: pointer; float: right; display: block; width: 19px; height: 19px; margin: 15px; background: url('images/close.svg') center center no-repeat; }
@@ -36,14 +46,22 @@ h3 { font-size: 20px; }
 	
 .js .slide a { cursor: pointer; }
 
-#detailview { display: none; text-align: center; position: absolute; top: 0; width: 100%; }
+#detailview { display: none; text-align: center; position: absolute; top: 0; width: 100%; z-index: 3; }
 
-#enlargement {z-index: 3;  position: relative; }
+#enlargement { position: relative; z-index: 4; }
 
 #enlargement a.close { float: right; display: block; width: 19px; height: 19px; background: url('images/close.svg') center center no-repeat; }
 #enlargement a.close span { display: none; }
 
-#enlargement .image { display: inline-block; padding: 0 50px; margin: auto; position: relative; }
+#enlargement .image {  margin: auto; padding: 0 50px; position: relative; }
+
+#enlargement .controls { position: absolute; z-index: 5; width: 100%; }
+#enlargement .controls .inner { width: 100%; padding: 0 50px; position: relative;  margin: auto;
+	-webkit-transition: width 0.2s ease-in-out;
+	-moz-transition: width 0.2s ease-in-out;
+	-o-transition: width 0.2s ease-in-out;
+	transition: width 0.2s ease-in-out;
+}
 
 .js #enlargement a { cursor: pointer; }
 #enlargement a.prev { position: absolute; width: 50px; left: 0; height: 100%; background: url('images/leftarrow.svg') left center no-repeat;}

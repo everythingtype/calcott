@@ -20,63 +20,54 @@ get_header(); ?>
 
 				<div class="slideshow">
 
-				<?php 
-				$imageids = Array();
-
-				$rows = get_field('images'); 
-				foreach($rows as $row) : 
-					if ( $row['image'] ) : 
-						$imageids[] = $row['image']['id'];
-					endif;
-				endforeach; 
-
-				// Sub Pages
-				$args = array(
-					'post_type' => 'page',
-					'posts_per_page' => -1,
-					'post_parent' => $post->ID
-				);
-
-				$myposts = get_posts( $args );
-
-				foreach ( $myposts as $post ) : setup_postdata( $post );
+					<?php 
+					$imageids = Array();
 
 					$rows = get_field('images'); 
 					foreach($rows as $row) : 
 						if ( $row['image'] ) : 
 							$imageids[] = $row['image']['id'];
 						endif;
-					endforeach;
+					endforeach; 
+
+					// Sub Pages
+					$args = array(
+						'post_type' => 'page',
+						'posts_per_page' => -1,
+						'post_parent' => $post->ID
+					);
+
+					$myposts = get_posts( $args );
+
+					foreach ( $myposts as $post ) : setup_postdata( $post );
+
+						$rows = get_field('images'); 
+						foreach($rows as $row) : 
+							if ( $row['image'] ) : 
+								$imageids[] = $row['image']['id'];
+							endif;
+						endforeach;
 				
-				endforeach;
+					endforeach;
 
-				$imageids = array_unique($imageids);
+					$imageids = array_unique($imageids);
 
-				the_calcott_gallery($imageids);
-			
-			endwhile; ?>
+					the_calcott_gallery($imageids,'thumb'); 
+				
+					?>
 
-			<div class="gutter"></div>
-		</div>
-
-		<div id="detailview">
-
-			<div id="enlargement">
-				<div class="controls">
-					<a class="close" title="Close"><span>Close</span></a>
-					<div class="inner">
-						<a class="prev" title="Previous"><span>&larr;</span></a>
-						<a class="next" title="Next"><span>&rarr;</span></a>
-					</div>
+					<div class="gutter"></div>
 				</div>
-				<div class="image">
-					<img />
-				</div>
-				<div class="captionwrap"></div>
-			</div>
 
-			<div id="shade"></div>
-		</div>
+				<div class="detailview">
+
+					<?php the_calcott_gallery($imageids,'enlargement'); ?>
+
+					<div id="shade"></div>
+				</div>
+
+			<?php endwhile; ?>
+
 
 		<?php else : ?>
 			<div class="content"><p>Sorry, page not found.</p></div>

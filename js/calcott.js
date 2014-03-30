@@ -82,7 +82,7 @@
 			closeInfobox();
 		});
 
-		$('.slide a').on('click', function(event) {
+		$('.slideinner').on('click', function(event) {
 
 			var listItem = $(this).parents('.slide');
 			var theindex = $('.slide').index( listItem );
@@ -108,8 +108,7 @@
 			} else {
 				var targetindex = thisindex + 1;
 			}
-			
-			console.log(targetindex);
+
 			crossFade(targetindex);
 
 		});

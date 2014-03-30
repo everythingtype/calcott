@@ -1,5 +1,3 @@
-</div>
-
 <div class="footer">
 
 <div class="address">
@@ -14,12 +12,12 @@ Brooklyn, NY 11222</p>
 </div>
 
 <ul>
-<li><a href="">Instagram</a></li>
-<li><a href="">Twitter</a></li>
-<li><a href="">Tumblr</a></li>
+<li><a href="http://instagram.com/ncott">Instagram</a></li>
+<li><a href="https://twitter.com/ncott">Twitter</a></li>
+<li><a href="http://blog.nicholascalcott.com/">Tumblr</a></li>
 <li><a href="">Facebook</a></li>
 <li><a href="">LinkedIn</a></li>
-<li><a href="">RSS</a></li>
+<li><a href="/feed/">RSS</a></li>
 </ul>
 
 	<p class="small">&copy; <?php echo date('Y')?> Nicholas Calcott</p>

@@ -3,6 +3,7 @@
 /* Template Name: Image Gallery */
 
 get_header(); ?>
+<div class="content">
 
 		<?php if (have_posts()) : ?>
 
@@ -70,7 +71,8 @@ get_header(); ?>
 
 
 		<?php else : ?>
-			<div class="content"><p>Sorry, page not found.</p></div>
+			<p>Sorry, page not found.</p>
 		<?php endif; ?>
 
+</div>
 <?php get_footer(); ?>

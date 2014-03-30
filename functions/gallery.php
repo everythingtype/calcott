@@ -23,7 +23,7 @@ function the_calcott_gallery($imageids,$size) {
 
 		if ( $size == 'thumb') :
 			$output .= '<div class="slide" id="slide' . $i . '"><div class="slideinner">';
-				$output .= '<a><img src="' . $img_url . '" alt="' . $img_alt . '" /></a>';
+				$output .= '<img src="' . $img_url . '" alt="' . $img_alt . '" />';
 			$output .= '</div></div>';
 		elseif ( $size == 'enlargement') :
 

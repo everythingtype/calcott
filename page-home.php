@@ -4,82 +4,133 @@
 
 get_header(); ?>
 
-		<?php if (have_posts()) : ?>
+<div class="home">
 
-			<?php while (have_posts()) : the_post(); ?>
+	<div id="portfolios">
 
-				<?php if ( get_the_content() != '' ) : ?>
-					<div class="infobox"><div class="inner">
-						<a class="close" title="Close"><span>Close</span></a>
-						<div class="padding">
-							<h2><?php the_title(); ?></h2>
-							<?php the_content(); ?>
-						</div>
-					</div></div>
-				<?php endif; ?>
+	</div><!-- portfolios -->
 
-				<div class="slideshow">
-
-				<?php 
-				$imageids = Array();
-
-				$rows = get_field('images'); 
-				foreach($rows as $row) : 
-					if ( $row['image'] ) : 
-						$imageids[] = $row['image']['id'];
-					endif;
-				endforeach; 
-
-				// Sub Pages
-				$args = array(
-					'post_type' => 'page',
-					'posts_per_page' => -1,
-					'post_parent' => $post->ID
-				);
-
-				$myposts = get_posts( $args );
-
-				foreach ( $myposts as $post ) : setup_postdata( $post );
-
-					$rows = get_field('images'); 
-					foreach($rows as $row) : 
-						if ( $row['image'] ) : 
-							$imageids[] = $row['image']['id'];
-						endif;
-					endforeach;
-				
-				endforeach;
-
-				$imageids = array_unique($imageids);
-
-				the_calcott_gallery($imageids);
-			
-			endwhile; ?>
-
-			<div class="gutter"></div>
+	<div id="projects">
+		<h2>Projects</h2>
+		<div class="inner">
+			yo
 		</div>
+	</div><!-- projects -->
 
-		<div id="detailview">
+	<div id="updates">
+		<h2>Updates</h2>
+		<div class="line"></div>
+		<div class="inner">
 
-			<div id="enlargement">
-				<div class="controls">
-					<a class="close" title="Close"><span>Close</span></a>
-					<div class="inner">
-						<a class="prev" title="Previous"><span>&larr;</span></a>
-						<a class="next" title="Next"><span>&rarr;</span></a>
-					</div>
-				</div>
-				<div class="image">
-					<img />
-				</div>
-				<div class="captionwrap"></div>
+			<div class="column"><div class="padding">
+
+				<h3>Date</h3>
+
+				<div class="box"><div class="height"><div class="proportional">
+
+					<div id="instafeed"></div>
+
+				</div></div></div>
+				<p class="handle"><a href="http://instagram.com/ncott">Instagram</a><br />
+				<em>@ncott</em></p>
+			</div></div>
+
+			<div class="column"><div class="padding">
+
+				<h3 id="thetweetdate"></h3>
+
+				<div class="box"><div class="height"><div class="proportional">
+					
+					<div id="thetweet"></div>
+					
+				</div></div></div>
+				<p class="handle"><a href="https://twitter.com/ncott">Twitter</a><br />
+				<em>@ncott</em></p>
+			</div></div>
+
+			<div class="column"><div class="padding">
+
+				<h3>Date</h3>
+
+				<div class="box"><div class="height"><div class="proportional">
+
+					<script id="tmpl-photo" type="text/x-jsrender">
+							{{if photoset_layout}}
+								<ul class="photoset">
+									{{for photos}}<li><img src="{{:~getPhotoURL(#view, 500)}}" /></li>{{/for}}
+								</ul>
+							{{else}}
+								<img src="{{for photos}}{{:~getPhotoURL(#view, 500)}}{{/for}}" />
+							{{/if}}
+
+							{{:caption}}
+
+							{{for #data tmpl="#tmpl-metadata"/}}
+					</script>
+					<div id="photos"><span class="tumblr-api-loading">Loading posts&hellip;</span></div>
+
+				</div></div></div>
+				<p class="handle"><a href="http://blog.nicholascalcott.com/">Tumblr</a><br />
+				<em>blog.nicholascalcott.com</em></p>
+			</div></div>
+
+			<div class="also">
+				<p>Also see:<br />
+				<a href="">Facebook</a><br />
+				<a href="">LinkedIn</a><br />
+				<a href="/feed/">RSS</a></p>
 			</div>
 
-			<div id="shade"></div>
 		</div>
+	</div><!-- updates -->
 
-		<?php else : ?>
-			<div class="content"><p>Sorry, page not found.</p></div>
-		<?php endif; ?>
+	<div id="info">
+		<h2>Info</h2>
+		<div class="inner">
+			<div class="column"><div class="padding">
+				<h3>About Nicholas Calcott</h3>
+
+				<?php get_template_part('parts/about'); ?>
+
+			</div></div>
+			<div class="column"><div class="padding">
+				<h3>Clients</h3>
+
+				<?php get_template_part('parts/clients'); ?>
+
+			</div></div>
+			<div class="column"><div class="padding">
+				<h3>Contact</h3>
+
+				<?php get_template_part('parts/contact'); ?>
+
+				<h4><span>Subscribe</span></h4>
+
+				<p>To receive my newsletter,<br /> 
+				please send your email:</p>
+
+			</div></div>
+		</div>
+	</div><!-- about -->
+
+	<div id="other">
+		<h2>Other Stuff</h2>
+		<div class="line"></div>
+		<div class="inner">
+			<div class="column"><div class="padding">
+				<h3>Exhibitions</h3>
+				<?php get_template_part('parts/exhibitions'); ?>
+			</div></div>
+			<div class="column"><div class="padding">
+				<h3>Artist&rsquo;s Books</h3>
+			</div></div>
+			<div class="column"><div class="padding">
+				<h3>Texts</h3>
+				<?php get_template_part('parts/texts'); ?>
+			</div></div>
+		</div>
+	</div><!-- other -->
+
+</div>
 
 <?php get_footer(); ?>

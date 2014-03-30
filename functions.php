@@ -13,11 +13,6 @@ function enqueue_scripts_method() {
 
 	if(!wp_script_is('jquery')) wp_enqueue_script("jquery");
 
-	// Slideshow
-	$slideshowjs = get_template_directory_uri() . '/js/slideshow.js';
-	wp_register_script('slideshowjs',$slideshowjs);
-	wp_enqueue_script( 'slideshowjs',array('jquery'));
-
 	// Packery
 	$packeryjs = get_template_directory_uri() . '/js/packery.pkgd.min.js';
 	wp_register_script('packeryjs',$packeryjs);
@@ -38,6 +33,32 @@ function enqueue_scripts_method() {
 	wp_register_style('themecss',$themecss);
 	wp_enqueue_style( 'themecss');
 
+	if ( is_front_page() ) :
+
+		$twitterjs = get_template_directory_uri() . '/js/twitter.js';
+		wp_register_script('twitterjs',$twitterjs);
+		wp_enqueue_script( 'twitterjs');
+
+		$instafeedjs = get_template_directory_uri() . '/js/instafeed.min.js';
+		wp_register_script('instafeedjs',$instafeedjs);
+		wp_enqueue_script( 'instafeedjs');
+
+		$jsrenderjs = get_template_directory_uri() . '/js/jsrender.js';
+		wp_register_script('jsrenderjs',$jsrenderjs);
+		wp_enqueue_script( 'jsrenderjs',array('jquery'));
+
+		$tumblrkitjs = get_template_directory_uri() . '/js/jquery.tumblr-kit.js';
+		wp_register_script('tumblrkitjs',$tumblrkitjs);
+		wp_enqueue_script( 'tumblrkitjs',array('jquery'));
+
+
+
+		$homepagejs = get_template_directory_uri() . '/js/homepage.js';
+		wp_register_script('homepagejs',$homepagejs);
+		wp_enqueue_script( 'homepagejs',array('jquery','jsrenderjs','instafeedjs','tumblrkitjs') );
+
+	endif;
+
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts_method');
@@ -47,6 +68,21 @@ function register_my_menu() {
 	register_nav_menu( 'site-navigation', __( 'Site Navigation' ) );
 }
 add_action( 'init', 'register_my_menu' );
+
+
+
+
+
+
+function get_ID_by_slug($page_slug) {
+	// Not happy about calling the DB, but get_page_by_path() just wasn't cutting it.
+
+	global $wpdb;
+
+	$page_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE ( post_name = '".$page_slug."' or post_title = '".$page_slug."' ) and post_status = 'publish' and post_type='page' ");
+	return $page_id;
+
+}
 
 
 // Includes

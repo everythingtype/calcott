@@ -35,31 +35,33 @@
 
 <div class="layout">
 
-<div class="header"><div class="inner">
-<h1><span><?php bloginfo('name'); ?></span></h1>
+<div class="header">
+	
+<div class="padding">
+<h1><span><a href="/"><?php bloginfo('name'); ?></a></span></h1>
 
 <?php if ( !is_front_page() ) : ?>
 	<h2><?php the_title(); ?></h2>
 <?php endif; ?>
+</div>
+
+
+<div class="sitenav"><div class="inner">
+<?php if ( is_front_page() ) : 
+	$linkBase = '';
+else :
+	$linkBase = '/';
+endif;
+?>
+
+	<ul>
+	<li><a href="<?php echo $linkBase; ?>#portfolios">Portfolios</a></li>
+	<li><a href="<?php echo $linkBase; ?>#projects">Projects</a></li>
+	<li><a href="<?php echo $linkBase; ?>#updates">Updates</a></li>
+	<li><a href="<?php echo $linkBase; ?>#info">About &amp; Contact</a></li>
+	<li><a href="<?php echo $linkBase; ?>#other">Other Stuff</a></li>
+	</ul>
+
+</div>
 
 </div></div>
-
-<div class="content">
-	
-	<div class="sitenav">
-	<?php if ( is_front_page() ) : 
-		$linkBase = '';
-	else :
-		$linkBase = '/';
-	endif;
-	?>
-
-		<ul>
-		<li><a href="<?php echo $linkBase; ?>#portfolios">Portfolios</a></li>
-		<li><a href="<?php echo $linkBase; ?>#projects">Projects</a></li>
-		<li><a href="<?php echo $linkBase; ?>#about">About &amp; Contact</a></li>
-		<li><a href="<?php echo $linkBase; ?>#updates">Updates</a></li>
-		<li><a href="<?php echo $linkBase; ?>#other">Other Stuff</a></li>
-		</ul>
-
-	</div>

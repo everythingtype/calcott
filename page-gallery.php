@@ -29,7 +29,7 @@ get_header(); ?>
 						if ( $row['image'] ) : 
 							$imageids[] = $row['image']['id'];
 						endif;
-					endforeach; 
+					endforeach;
 
 					// Sub Pages
 					$args = array(

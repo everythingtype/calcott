@@ -71,6 +71,9 @@ add_action( 'init', 'register_my_menu' );
 
 
 
+if ( function_exists( 'add_theme_support' ) ) {
+    add_theme_support( 'post-thumbnails' );
+}
 
 
 

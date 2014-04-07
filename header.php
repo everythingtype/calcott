@@ -38,11 +38,20 @@
 <div class="header">
 	
 <div class="padding">
+
 <h1><span><a href="/"><?php bloginfo('name'); ?></a></span></h1>
+
+<div class="topnav">
+<ul>
+<li id="newsbutton" <?php if ( is_front_page() ) echo 'class="active"'; ?>><a href="/#news">News</a></li>
+</ul>
+</div>
 
 <?php if ( !is_front_page() ) : ?>
 	<h2><?php the_title(); ?></h2>
 <?php endif; ?>
+
+
 </div>
 
 

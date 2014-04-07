@@ -7,13 +7,17 @@ get_header(); ?>
 <div class="home">
 
 	<div id="portfolios">
-
+		<div class="thumbnails">
+			<?php get_template_part('parts/portfolios'); ?>
+		</div>
 	</div><!-- portfolios -->
 
 	<div id="projects">
 		<h2>Projects</h2>
 		<div class="inner">
-			yo
+			<div class="thumbnails">
+				<?php get_template_part('parts/projects'); ?>
+			</div>
 		</div>
 	</div><!-- projects -->
 
@@ -123,6 +127,8 @@ get_header(); ?>
 			</div></div>
 			<div class="column"><div class="padding">
 				<h3>Artist&rsquo;s Books</h3>
+					<?php get_template_part('parts/books'); ?>
+					<p><a href="/books/">See All Artists Books</a></p>
 			</div></div>
 			<div class="column"><div class="padding">
 				<h3>Texts</h3>
@@ -130,6 +136,14 @@ get_header(); ?>
 			</div></div>
 		</div>
 	</div><!-- other -->
+
+	<div id="news">
+		<div class="inner">
+			<a class="close" title="Close"><span>Close</span></a>
+			<h2>News</h2>
+			<?php get_template_part('parts/news'); ?>
+		</div>
+	</div>
 
 </div>
 

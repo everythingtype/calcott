@@ -20,7 +20,7 @@ Brooklyn, NY 11222</p>
 <li><a href="/feed/">RSS</a></li>
 </ul>
 
-	<p class="small">&copy; <?php echo date('Y')?> Nicholas Calcott</p>
+<p class="small">&copy; <?php echo date('Y')?> Nicholas Calcott</p>
 
 </div>
 

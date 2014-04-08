@@ -49,13 +49,11 @@ function enqueue_scripts_method() {
 
 		$tumblrkitjs = get_template_directory_uri() . '/js/jquery.tumblr-kit.js';
 		wp_register_script('tumblrkitjs',$tumblrkitjs);
-		wp_enqueue_script( 'tumblrkitjs',array('jquery'));
+		wp_enqueue_script( 'tumblrkitjs',array('jquery','jsrenderjs'));
 
-
-
-		$homepagejs = get_template_directory_uri() . '/js/homepage.js';
-		wp_register_script('homepagejs',$homepagejs);
-		wp_enqueue_script( 'homepagejs',array('jquery','jsrenderjs','instafeedjs','tumblrkitjs') );
+		$tumblrjs = get_template_directory_uri() . '/js/tumblr.js';
+		wp_register_script('tumblrjs',$tumblrjs);
+		wp_enqueue_script( 'tumblrjs',array('jquery','jsrenderjs','tumblrkitjs') );
 
 	endif;
 

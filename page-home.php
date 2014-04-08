@@ -54,26 +54,22 @@ get_header(); ?>
 
 			<div class="column"><div class="padding">
 
-				<h3>Date</h3>
+				<script id="tmpl-photo" type="text/x-jsrender">
 
-				<div class="box"><div class="height"><div class="proportional">
+					<h3>{{datetime:date}}</h3>
 
-					<script id="tmpl-photo" type="text/x-jsrender">
-							{{if photoset_layout}}
-								<ul class="photoset">
-									{{for photos}}<li><img src="{{:~getPhotoURL(#view, 500)}}" /></li>{{/for}}
-								</ul>
-							{{else}}
-								<img src="{{for photos}}{{:~getPhotoURL(#view, 500)}}{{/for}}" />
-							{{/if}}
+					<div class="box"><div class="height"><div class="proportional">
+					{{if photoset_layout}}
+						{{for photos}}<img src="{{:~getPhotoURL(#view, 500)}}" />{{/for}}
+					{{else}}
+						<img src="{{for photos}}{{:~getPhotoURL(#view, 500)}}{{/for}}" />
+					{{/if}}
+					</div></div></div>
 
-							{{:caption}}
+				</script>
 
-							{{for #data tmpl="#tmpl-metadata"/}}
-					</script>
-					<div id="photos"><span class="tumblr-api-loading">Loading posts&hellip;</span></div>
+				<div id="tumblr"><span class="tumblr-api-loading"></span></div>
 
-				</div></div></div>
 				<p class="handle"><a href="http://blog.nicholascalcott.com/">Tumblr</a><br />
 				<em>blog.nicholascalcott.com</em></p>
 			</div></div>

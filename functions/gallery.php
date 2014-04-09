@@ -1,6 +1,6 @@
 <?php
 
-function the_calcott_gallery($imageids,$size) {
+function the_calcott_gallery($imageids) {
 
 	$numItems = count( $imageids );
 	
@@ -9,8 +9,8 @@ function the_calcott_gallery($imageids,$size) {
 	
 	foreach ( $imageids as $imageid ) :
 	
-		$big_array = image_downsize( $imageid, 'large' );
- 		$img_url = $big_array[0];
+		$largesize = image_downsize( $imageid, 'large' );
+		$large_url = $largesize[0];
 
 		$imageobject = get_post( $imageid );
 
@@ -19,26 +19,20 @@ function the_calcott_gallery($imageids,$size) {
 		$img_description = $imageobject->post_content; // description.
 
 		$img_alt = get_post_meta($attachment_id, '_wp_attachment_image_alt', true); //alt
-		if ($img_alt == '') : $img_alt = $img_title; endif;
 
-		if ( $size == 'thumb') :
-			$output .= '<div class="slide" id="slide' . $i . '"><div class="slideinner">';
-				$output .= '<img src="' . $img_url . '" alt="' . $img_alt . '" />';
-			$output .= '</div></div>';
-		elseif ( $size == 'enlargement') :
+		if ($img_alt == '') : 
+			$img_alt = $img_title; 
+		endif;
 
-			$output .= '<div class="enlargement">';
-				$output .= '<a class="control close" title="Close"><span>Close</span></a>';
-				$output .= '<div class="image">';
-					$output .= '<img src="' . $img_url . '" alt="' . $img_alt . '" />';
-					$output .= '<a class="control prev" title="Previous"><span>&larr;</span></a>';
-					$output .= '<a class="control next" title="Next"><span>&rarr;</span></a>';
-				$output .= '</div>';
-				if ( $img_caption ) :
-					$output .= '<div class="caption">' . wpautop($img_caption) . '</div>';
-				endif; 
-			$output .= '</div>';
-		endif; 
+		$output .= '<div class="slide" id="slide' . $i . '"><div class="slideinner">';
+
+		$output .= '<a class="gallery" href="' . $large_url . '"';
+
+		if ( $img_caption ) $output .= 'title="' . $img_caption. '"';
+
+		$output .= '><img src="' . $large_url . '" alt="' . $img_alt . '" />';
+
+		$output .= '</div></div>';
 
 		$i++; 
 		if ($i === $numItems ) $i = 0;

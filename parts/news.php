@@ -17,7 +17,7 @@ foreach ($postslist as $post) : setup_postdata($post);
 
 		echo '<div class="item">';
 			if ( $row['when'] ) echo '<h3>' . $row['when'] . '</h3>';
-			if ( $row['what'] ) echo '<p>' . $row['what'] . '</p>';
+			if ( $row['what'] ) echo wpautop( $row['what'] );
 			if ( $row['image'] ) echo '<img src="' . $row['image']['sizes']['large'] . '" alt="" />';
 		echo '</div>';
 

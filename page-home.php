@@ -106,8 +106,7 @@ get_header(); ?>
 
 				<h4><span>Subscribe</span></h4>
 
-				<p>To receive my newsletter,<br /> 
-				please send your email:</p>
+				<?php get_template_part('parts/newsletter'); ?>
 
 			</div></div>
 		</div>

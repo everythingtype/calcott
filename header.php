@@ -41,14 +41,18 @@
 
 <h1><span><a href="/"><?php bloginfo('name'); ?></a></span></h1>
 
-<div class="topnav">
-<ul>
-<li id="newsbutton" <?php if ( is_front_page() ) echo 'class="active"'; ?>><a href="/#news">News</a></li>
-</ul>
-</div>
+<?php if ( is_front_page() ) : ?>
 
-<?php if ( !is_front_page() ) : ?>
+	<div class="topnav">
+	<ul>
+	<li id="newsbutton" <?php if ( is_front_page() ) echo 'class="active"'; ?>><a href="/#news">News</a></li>
+	</ul>
+	</div>
+
+<?php else :?>
+
 	<h2><?php the_title(); ?></h2>
+
 <?php endif; ?>
 
 

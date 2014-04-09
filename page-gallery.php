@@ -53,18 +53,11 @@ get_header(); ?>
 
 					$imageids = array_unique($imageids);
 
-					the_calcott_gallery($imageids,'thumb'); 
+					the_calcott_gallery($imageids); 
 				
 					?>
 
 					<div class="gutter"></div>
-				</div>
-
-				<div class="detailview">
-
-					<?php the_calcott_gallery($imageids,'enlargement'); ?>
-
-					<div id="shade"></div>
 				</div>
 
 			<?php endwhile; ?>

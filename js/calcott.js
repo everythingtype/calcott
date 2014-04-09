@@ -9,24 +9,6 @@
 
 	}
 
-	function setupImage(index) {
-		$('.detailview').data('index',index);
-		$('.enlargement').hide();
-		$('.enlargement:eq(' + index + ')').show();
-	}
-
-	function crossFade(index) {
-		$('.detailview').data('index',index);
-		$('.enlargement:eq(' + index + ')').addClass('incoming');
-
-		$('.incoming').find('img').hide().fadeIn('fast');
-		$('.incoming').find('.caption').hide().fadeIn('fast');
-		$('.incoming').show();
-
-		$('.enlargement').not('.incoming').fadeOut('fast');
-		$('.incoming').removeClass('incoming');
-	}
-
 	function setupGrid() {
 
 		var contentWidth = $('.content').outerWidth() + 20;
@@ -54,17 +36,6 @@
 		$('.header').find('.showinfo').removeClass('active');
 		$('.infobox .inner').fadeOut('fast', function () {
 			$('.infobox').hide();
-		});
-	}
-
-	function openDetail() {
-		$('.detailview').fadeIn('fast');
-	}
-
-
-	function closeDetail() {
-		$('.detailview').fadeOut('fast', function () {
-			$('.detailview .enlargement').hide();
 		});
 	}
 
@@ -115,52 +86,29 @@
 			closeInfobox();
 		});
 
-		$('.slideinner').on('click', function(event) {
 
-			var listItem = $(this).parents('.slide');
-			var theindex = $('.slide').index( listItem );
+		// Height of header, for Colorbox position
 
- 			setupImage(theindex);
+		var headertop = 0;
 
-			openDetail();
+		if ($('.header').length != 0) {
+			headertop += $('.header').outerHeight();
+			console.log(headertop);
+		}
 
+		if ($('#wpadminbar').length != 0) {
+			headertop += $('#wpadminbar').outerHeight();
+			console.log(headertop);
+		}
+
+
+		$(".gallery").colorbox({
+			rel : 'gallery', 
+			transition : "fade",
+			opacity : '0.98',
+			top : headertop + 'px',
 		});
 
-		$('.enlargement').find('.close').live('click', function(event) {
-			closeDetail();
-		});
-
-		$('.enlargement').find('.next').live('click', function(event) {
-
-			var thisindex = $('.detailview').data('index');
-
-			var slidecount = $('.slideshow .slide').length - 1;
-
-			if ( thisindex == slidecount ) {
-				var targetindex = 0;
-			} else {
-				var targetindex = thisindex + 1;
-			}
-
-			crossFade(targetindex);
-
-		});
-
-		$('.enlargement').find('.prev').live('click', function(event) {
-
-			var thisindex = $('.detailview').data('index');
-
-			var slidecount = $('.slideshow .slide').length - 1;
-
-			if ( thisindex == 0 ) {
-				var targetindex = slidecount;
-			} else {
-				var targetindex = thisindex - 1;
-			}
-			
-			crossFade(targetindex);
-
-		});
 
 
 	});

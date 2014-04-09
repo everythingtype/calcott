@@ -16,6 +16,10 @@ a {text-decoration: none;
 	transition: color 0.2s ease;
 }
 
+*:focus {
+    outline: none;
+}
+
 h1, h2, h3, h4, h5 { font-weight: normal; }
 
 
@@ -97,7 +101,12 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 #info h3 {  border-bottom: 2px solid #fff;  }
 #info h4 span {border-bottom: 2px solid #fff;}
 #info a {color: #fff; border-bottom: 2px solid #8cb0ee; }
-	
+
+#mce-EMAIL { background: #3e7be4; border: 2px solid #fff; color: #fff; font-family: 'PxGrotesk-Bold', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 20px; line-height: 1; width: 100%; padding: .5em; box-sizing: border-box; }
+#mce-EMAIL::-webkit-input-placeholder { color: #fff; }
+#mce-EMAIL:-moz-placeholder { color: #fff; }
+
+
 #other {}
 #other .line {border-top: 1px solid #E2E2E3; margin: 0 20px; }
 #other .inner { padding: 20px 0 20px 20px; overflow: hidden; }
@@ -132,10 +141,11 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 .infobox a.close span { display: none; }
 
 .slideshow {  }
-.slide { float: left; width: 25%; text-align: center;  margin-bottom: 20px; line-height: 0; }
+.slide { float: left; width: 25%; text-align: center;  margin-bottom: 20px;  line-height: 0;}
 .slide .slideinner {  padding: 0 20px 0 0; height: 100%; }
 .slide .caption {display: none; }
 .slide img { max-height: 295px; }
+.slide a { display: block; }
 
 .js .slide  .slideinner { cursor: pointer; }
 
@@ -157,7 +167,6 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 
 
 .enlargement .caption { font-size: 14px; line-height: 1.57; }
-#shade { position: fixed; top: 0; right: 0; bottom: 0; left: 0; background: rgba(255,255,255,0.98); z-index: 2; }
 
 .detailview a {color: #8a8b8e; }
 
@@ -167,7 +176,7 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 .footer a { color: #282828; border-bottom: 2px solid #a7a8aa; }
 .footer p {margin: 0;}
 	
-.footer .address { font-style: normal; float: left; margin-right: 200px; }
+.footer .address { font-style: normal; float: left;  width: 33.33333333333333%; }
 
 .footer ul { list-style: none; margin: 1em 0 0 0; padding: 0; float: left;}
 .footer li { margin: 0; padding: 0; }

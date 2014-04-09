@@ -4,6 +4,7 @@ function enqueue_scripts_method() {
 
 	// Remove Unnecessary Code
 	// http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
+
 	remove_action('wp_head', 'rsd_link');
 	remove_action('wp_head', 'wlwmanifest_link');
 	remove_action('wp_head', 'wp_generator');
@@ -14,21 +15,27 @@ function enqueue_scripts_method() {
 	if(!wp_script_is('jquery')) wp_enqueue_script("jquery");
 
 	// Packery
+
 	$packeryjs = get_template_directory_uri() . '/js/packery.pkgd.min.js';
 	wp_register_script('packeryjs',$packeryjs);
 	wp_enqueue_script( 'packeryjs',array('jquery'));
 
-	// Theme JS
+	// Colorbox
+
+	$colorboxcss = get_template_directory_uri() . '/css/colorbox.css';
+    wp_register_style('colorboxcss',$colorboxcss);
+    wp_enqueue_style( 'colorboxcss');
+
+	$colorboxjs = get_template_directory_uri() . '/js/jquery.colorbox-min.js';
+	wp_register_script('colorboxjs',$colorboxjs);
+	wp_enqueue_script( 'colorboxjs','jquery');
+
+	// Theme
+
 	$themejs = get_template_directory_uri() . '/js/calcott.js';
 	wp_register_script('themejs',$themejs);
-	wp_enqueue_script( 'themejs',array('jquery','slideshowjs','packeryjs'));
-	
-	// Fonts CSS
-	$fontscss = get_template_directory_uri() . '/fonts/fonts.css';
-    wp_register_style('fontscss',$fontscss);
-    wp_enqueue_style( 'fontscss');
+	wp_enqueue_script( 'themejs',array('jquery','colorboxjs','packeryjs'));
 
-	// theme css
 	$themecss = get_stylesheet_directory_uri() . '/style.css';
 	wp_register_style('themecss',$themecss);
 	wp_enqueue_style( 'themecss');
@@ -76,13 +83,9 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 
 function get_ID_by_slug($page_slug) {
-	// Not happy about calling the DB, but get_page_by_path() just wasn't cutting it.
-
 	global $wpdb;
-
 	$page_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE ( post_name = '".$page_slug."' or post_title = '".$page_slug."' ) and post_status = 'publish' and post_type='page' ");
 	return $page_id;
-
 }
 
 

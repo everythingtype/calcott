@@ -12,15 +12,17 @@ $postslist = get_pages($args);
 foreach ($postslist as $post) : setup_postdata($post);
 
 	$rows = get_field('item');
+	$count = 1; 
 
 	foreach($rows as $row) :
-
-		echo '<div class="item">';
-			if ( $row['when'] ) echo '<h3>' . $row['when'] . '</h3>';
-			if ( $row['what'] ) echo wpautop( $row['what'] );
-			if ( $row['image'] ) echo '<img src="' . $row['image']['sizes']['large'] . '" alt="" />';
-		echo '</div>';
-
+		if ( $count < 3 ) :
+			echo '<div class="item">';
+				if ( $row['when'] ) echo '<h3>' . $row['when'] . '</h3>';
+				if ( $row['what'] ) echo wpautop( $row['what'] );
+				if ( $row['image'] ) echo '<img src="' . $row['image']['sizes']['large'] . '" alt="" />';
+			echo '</div>';
+			$count++;
+		endif;
 	endforeach;
 
 endforeach; 

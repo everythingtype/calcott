@@ -2,6 +2,8 @@
 
 function enqueue_scripts_method() {
 
+	$version = "a";
+
 	// Remove Unnecessary Code
 	// http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
 
@@ -14,55 +16,61 @@ function enqueue_scripts_method() {
 
 	if(!wp_script_is('jquery')) wp_enqueue_script("jquery");
 
+
+	if ( is_front_page() ) :
+
+		$jqueryuijs = get_template_directory_uri() . '/js/jquery-ui-1.10.4.custom.min.js';
+		wp_register_script('jqueryuijs',$jqueryuijs, false, $version);
+		wp_enqueue_script( 'jqueryuijs');
+
+		$twitterjs = get_template_directory_uri() . '/js/twitter.js';
+		wp_register_script('twitterjs',$twitterjs, false, $version);
+		wp_enqueue_script( 'twitterjs');
+
+		$instafeedjs = get_template_directory_uri() . '/js/instafeed.min.js';
+		wp_register_script('instafeedjs',$instafeedjs, false, $version);
+		wp_enqueue_script( 'instafeedjs');
+
+		$jsrenderjs = get_template_directory_uri() . '/js/jsrender.js';
+		wp_register_script('jsrenderjs',$jsrenderjs, false, $version);
+		wp_enqueue_script( 'jsrenderjs',array('jquery'));
+
+		$tumblrkitjs = get_template_directory_uri() . '/js/jquery.tumblr-kit.js';
+		wp_register_script('tumblrkitjs',$tumblrkitjs, false, $version);
+		wp_enqueue_script( 'tumblrkitjs',array('jquery','jsrenderjs'));
+
+		$tumblrjs = get_template_directory_uri() . '/js/tumblr.js';
+		wp_register_script('tumblrjs',$tumblrjs, false, $version);
+		wp_enqueue_script( 'tumblrjs',array('jquery','jsrenderjs','tumblrkitjs') );
+
+		$smoothscrolljs = get_template_directory_uri() . '/js/smoothscroll.js';
+		wp_register_script('smoothscrolljs',$smoothscrolljs, false, $version);
+		wp_enqueue_script( 'smoothscrolljs',array('jquery') );
+
+	endif;
+
 	// Packery
 
 	$packeryjs = get_template_directory_uri() . '/js/packery.pkgd.min.js';
-	wp_register_script('packeryjs',$packeryjs);
+	wp_register_script('packeryjs',$packeryjs, false, $version);
 	wp_enqueue_script( 'packeryjs',array('jquery'));
 
 	// Colorbox
 
-	$colorboxcss = get_template_directory_uri() . '/css/colorbox.css';
-    wp_register_style('colorboxcss',$colorboxcss);
-    wp_enqueue_style( 'colorboxcss');
-
 	$colorboxjs = get_template_directory_uri() . '/js/jquery.colorbox-min.js';
-	wp_register_script('colorboxjs',$colorboxjs);
+	wp_register_script('colorboxjs',$colorboxjs, false, $version);
 	wp_enqueue_script( 'colorboxjs','jquery');
 
 	// Theme
 
 	$themejs = get_template_directory_uri() . '/js/calcott.js';
-	wp_register_script('themejs',$themejs);
+	wp_register_script('themejs',$themejs, false, $version);
 	wp_enqueue_script( 'themejs',array('jquery','colorboxjs','packeryjs'));
 
 	$themecss = get_stylesheet_directory_uri() . '/style.css';
-	wp_register_style('themecss',$themecss);
+	wp_register_style('themecss',$themecss, false, $version);
 	wp_enqueue_style( 'themecss');
 
-	if ( is_front_page() ) :
-
-		$twitterjs = get_template_directory_uri() . '/js/twitter.js';
-		wp_register_script('twitterjs',$twitterjs);
-		wp_enqueue_script( 'twitterjs');
-
-		$instafeedjs = get_template_directory_uri() . '/js/instafeed.min.js';
-		wp_register_script('instafeedjs',$instafeedjs);
-		wp_enqueue_script( 'instafeedjs');
-
-		$jsrenderjs = get_template_directory_uri() . '/js/jsrender.js';
-		wp_register_script('jsrenderjs',$jsrenderjs);
-		wp_enqueue_script( 'jsrenderjs',array('jquery'));
-
-		$tumblrkitjs = get_template_directory_uri() . '/js/jquery.tumblr-kit.js';
-		wp_register_script('tumblrkitjs',$tumblrkitjs);
-		wp_enqueue_script( 'tumblrkitjs',array('jquery','jsrenderjs'));
-
-		$tumblrjs = get_template_directory_uri() . '/js/tumblr.js';
-		wp_register_script('tumblrjs',$tumblrjs);
-		wp_enqueue_script( 'tumblrjs',array('jquery','jsrenderjs','tumblrkitjs') );
-
-	endif;
 
 }
 

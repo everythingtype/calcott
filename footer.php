@@ -13,7 +13,7 @@ Brooklyn, NY 11222</p>
 
 <ul>
 <li><a href="http://instagram.com/ncott">Instagram</a></li>
-<li><a href="https://twitter.com/ncott">Twitter</a></li>
+<li><a href="https://twitter.com/NicholasCalcott">Twitter</a></li>
 <li><a href="http://blog.nicholascalcott.com/">Tumblr</a></li>
 <li><a href="">Facebook</a></li>
 <li><a href="">LinkedIn</a></li>

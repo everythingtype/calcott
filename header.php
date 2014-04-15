@@ -45,7 +45,7 @@
 
 	<div class="topnav">
 	<ul>
-	<li id="newsbutton" <?php if ( is_front_page() ) echo 'class="active"'; ?>><a href="/#news">News</a></li>
+	<li id="newsbutton" class="active"><a>News</a></li>
 	</ul>
 	</div>
 

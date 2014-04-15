@@ -48,8 +48,8 @@ get_header(); ?>
 					<div id="thetweet"></div>
 					
 				</div></div></div>
-				<p class="handle"><a href="https://twitter.com/ncott">Twitter</a><br />
-				<em>@ncott</em></p>
+				<p class="handle"><a href="https://twitter.com/NicholasCalcott">Twitter</a><br />
+				<em>@NicholasCalcott</em></p>
 			</div></div>
 
 			<div class="column"><div class="padding">

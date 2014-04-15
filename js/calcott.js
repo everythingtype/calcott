@@ -43,7 +43,6 @@
 		$('#news').show();
 		$('#news .inner').fadeIn('fast');
 		$('#newsbutton').addClass('active');
-		$('#newsbutton').removeClass('inactive');
 	}
 
 	function closeNews() {
@@ -67,12 +66,14 @@
 			}
 		});
 
+		$('#news').draggable();
+
 		$('#newsbutton').on('click', function(event) {
+			event.preventDefault();
+
 			if ( $(this).hasClass('active') ) {
-				event.preventDefault();
 				closeNews();
-			} else if ( $(this).hasClass('inactive') ) {
-				event.preventDefault();
+			} else {
 				openNews();
 			}
 		});
@@ -86,30 +87,15 @@
 			closeInfobox();
 		});
 
-
-		// Height of header, for Colorbox position
-
-		var headertop = 0;
-
-		if ($('.header').length != 0) {
-			headertop += $('.header').outerHeight();
-			console.log(headertop);
-		}
-
-		if ($('#wpadminbar').length != 0) {
-			headertop += $('#wpadminbar').outerHeight();
-			console.log(headertop);
-		}
-
-
 		$(".gallery").colorbox({
 			rel : 'gallery', 
-			transition : "fade",
+			transition:"fade",
+			speed:200,
 			opacity : '0.98',
-			top : headertop + 'px',
+			maxWidth : '90%;',
+			maxHeight : '100%;',
+			current : '',
 		});
-
-
 
 	});
 

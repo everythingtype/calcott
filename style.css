@@ -53,6 +53,9 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 
 .content { margin: 0 20px 60px 20px; position: relative; }
 
+#loading { position: absolute; top: 0; width: 100%; z-index: 100; text-align: center; }
+#loading span { background: #fff; display: inline-block; padding: 0 .25em; color: #8a8b8e; }
+
 /* Home */
 
 .home { position: relative; }
@@ -91,6 +94,8 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 #updates .column .box .height { width: 100%; padding-top: 100%; position: relative; }
 #updates .column .box .proportional { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
 #updates .column p.handle { text-align: center; line-height: 1.2; }
+
+#updates .also {clear: both; }
 	
 #thetweet {color: #3e7be4; font-size: 32px; padding: 5px 20px; }
 #thetweet p {margin: 0;}

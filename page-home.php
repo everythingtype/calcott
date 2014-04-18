@@ -28,20 +28,15 @@ get_header(); ?>
 
 			<div class="column"><div class="padding">
 
-				<h3>Date</h3>
-
-				<div class="box"><div class="height"><div class="proportional">
-
 					<div id="instafeed"></div>
 
-				</div></div></div>
 				<p class="handle"><a href="http://instagram.com/ncott">Instagram</a><br />
 				<em>@ncott</em></p>
 			</div></div>
 
 			<div class="column"><div class="padding">
 
-				<h3 id="thetweetdate"></h3>
+				<h3 id="thetweetdate">&nbsp;</h3>
 
 				<div class="box"><div class="height"><div class="proportional">
 					

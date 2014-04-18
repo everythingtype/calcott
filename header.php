@@ -58,14 +58,15 @@
 
 </div>
 
+<div class="sitenav">
+	<div class="inner">
 
-<div class="sitenav"><div class="inner">
-<?php if ( is_front_page() ) : 
-	$linkBase = '';
-else :
-	$linkBase = '/';
-endif;
-?>
+	<?php if ( is_front_page() ) : 
+		$linkBase = '';
+	else :
+		$linkBase = '/';
+	endif;
+	?>
 
 	<ul>
 	<li><a href="<?php echo $linkBase; ?>#portfolios">Portfolios</a></li>
@@ -75,6 +76,11 @@ endif;
 	<li><a href="<?php echo $linkBase; ?>#other">Other Stuff</a></li>
 	</ul>
 
+	</div>
+
+	<div id="loading"></div>
+
 </div>
 
-</div></div>
+
+</div>

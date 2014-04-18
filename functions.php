@@ -16,12 +16,15 @@ function enqueue_scripts_method() {
 
 	if(!wp_script_is('jquery')) wp_enqueue_script("jquery");
 
+	// Packery
+
+	$packeryjs = get_template_directory_uri() . '/js/packery.pkgd.min.js';
+	wp_register_script('packeryjs',$packeryjs, false, $version);
+	wp_enqueue_script( 'packeryjs',array('jquery'));
 
 	if ( is_front_page() ) :
 
-		$jqueryuijs = get_template_directory_uri() . '/js/jquery-ui-1.10.4.custom.min.js';
-		wp_register_script('jqueryuijs',$jqueryuijs, false, $version);
-		wp_enqueue_script( 'jqueryuijs');
+		// Social
 
 		$twitterjs = get_template_directory_uri() . '/js/twitter.js';
 		wp_register_script('twitterjs',$twitterjs, false, $version);
@@ -39,38 +42,49 @@ function enqueue_scripts_method() {
 		wp_register_script('tumblrkitjs',$tumblrkitjs, false, $version);
 		wp_enqueue_script( 'tumblrkitjs',array('jquery','jsrenderjs'));
 
-		$tumblrjs = get_template_directory_uri() . '/js/tumblr.js';
-		wp_register_script('tumblrjs',$tumblrjs, false, $version);
-		wp_enqueue_script( 'tumblrjs',array('jquery','jsrenderjs','tumblrkitjs') );
+		// Layout
 
-		$smoothscrolljs = get_template_directory_uri() . '/js/smoothscroll.js';
-		wp_register_script('smoothscrolljs',$smoothscrolljs, false, $version);
-		wp_enqueue_script( 'smoothscrolljs',array('jquery') );
+		$jqueryuijs = get_template_directory_uri() . '/js/jquery-ui-1.10.4.custom.min.js';
+		wp_register_script('jqueryuijs',$jqueryuijs, false, $version);
+		wp_enqueue_script( 'jqueryuijs');
+
+		$babbqjs = get_template_directory_uri() . '/js/jquery.ba-bbq.js';
+		wp_register_script('babbqjs',$babbqjs, false, $version);
+		wp_enqueue_script( 'babbqjs',array('jquery') );
+
+		$scrolltojs = get_template_directory_uri() . '/js/jquery.scrollTo.min.js';
+		wp_register_script('scrolltojs',$scrolltojs, false, $version);
+		wp_enqueue_script( 'scrolltojs',array('jquery') );
+
+		$localScrolljs = get_template_directory_uri() . '/js/jquery.localScroll.min.js';
+		wp_register_script('localScrolljs',$localScrolljs, false, $version);
+		wp_enqueue_script( 'localScrolljs',array('jquery','scrolltojs') );
+
+		$homepagejs = get_template_directory_uri() . '/js/homepage.js';
+		wp_register_script('homepagejs',$homepagejs, false, $version);
+		wp_enqueue_script( 'homepagejs',array('jquery','jsrenderjs','tumblrkitjs','babbqjs','scrolltojs','localScrolljs','jqueryuijs') );
+
+	else:
+
+		// Slideshow
+
+		$colorboxjs = get_template_directory_uri() . '/js/jquery.colorbox-min.js';
+		wp_register_script('colorboxjs',$colorboxjs, false, $version);
+		wp_enqueue_script( 'colorboxjs','jquery');
+
+		$slideshowjs = get_template_directory_uri() . '/js/slideshow.js';
+		wp_register_script('slideshowjs',$slideshowjs, false, $version);
+		wp_enqueue_script( 'slideshowjs',array('jquery','colorboxjs') );
 
 	endif;
 
-	// Packery
-
-	$packeryjs = get_template_directory_uri() . '/js/packery.pkgd.min.js';
-	wp_register_script('packeryjs',$packeryjs, false, $version);
-	wp_enqueue_script( 'packeryjs',array('jquery'));
-
-	// Colorbox
-
-	$colorboxjs = get_template_directory_uri() . '/js/jquery.colorbox-min.js';
-	wp_register_script('colorboxjs',$colorboxjs, false, $version);
-	wp_enqueue_script( 'colorboxjs','jquery');
-
-	// Theme
-
-	$themejs = get_template_directory_uri() . '/js/calcott.js';
-	wp_register_script('themejs',$themejs, false, $version);
-	wp_enqueue_script( 'themejs',array('jquery','colorboxjs','packeryjs'));
+	$layoutjs = get_template_directory_uri() . '/js/layout.js';
+	wp_register_script('layoutjs',$layoutjs, false, $version);
+	wp_enqueue_script( 'layoutjs',array('jquery','packeryjs'));
 
 	$themecss = get_stylesheet_directory_uri() . '/style.css';
 	wp_register_style('themecss',$themecss, false, $version);
 	wp_enqueue_style( 'themecss');
-
 
 }
 

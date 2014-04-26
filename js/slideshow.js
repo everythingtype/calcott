@@ -1,5 +1,22 @@
 (function($) {
 
+	function setupGrid() {
+
+		var contentWidth = $('.content').outerWidth() + 20;
+		$('.slideshow').width( contentWidth + 'px' );
+
+		$('.slideshow').packery({
+			itemSelector: '.slide',
+			transitionDuration: "0"
+		});
+
+		$('.thumbnails').packery({
+			itemSelector: '.thumb',
+			transitionDuration: "0"
+		});
+
+	}
+
 	function openInfobox() {
 		$('.header').find('.showinfo').addClass('active');
 		$('.infobox').show();
@@ -15,8 +32,11 @@
 
 	$(document).ready( function() {
 
+		setupGrid();
+
 		if ( $('.infobox').length ) {
 			$('.header').find('h2').append('<a title="Info" class="showinfo">Info</a>');
+			$('.infobox').draggable();
 		}
 
 		$('.header').find('.showinfo').on('click', function(event) {
@@ -41,6 +61,14 @@
 			current : '',
 		});
 
+	});
+
+	$(window).load( function() {
+		setupGrid();
+	});
+
+	$(window).resize( function() {
+		setupGrid();
 	});
 
 })(jQuery);

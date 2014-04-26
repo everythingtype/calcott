@@ -1,34 +1,80 @@
 (function($) {
 
-	function setupGrid() {
+	var navVisible = true;
+	var navHeight = 0;
 
-		var contentWidth = $('.content').outerWidth() + 20;
-		$('.slideshow').width( contentWidth + 'px' );
+	function hideNav() {
+		if ( navVisible == true ) {
 
-		$('.slideshow').packery({
-			itemSelector: '.slide',
-			transitionDuration: "0"
-		});
+			$( ".sitenav .inner" ).stop().animate({
+			    height: 0
+			  }, "fast", function() {
+				    // Animation complete.
+			});
 
-		$('.thumbnails').packery({
-			itemSelector: '.thumb',
-			transitionDuration: "0"
-		});
+			navVisible = false;
+
+		}
+	}
+
+	function showNav() {
+		if ( navVisible == false ) {
+
+			$( ".sitenav .inner" ).stop().animate({
+			    height: navHeight
+			  }, "fast", function() {
+				    // Animation complete.
+			});
+
+			navVisible = true;
+
+		}
+	}
+
+	function setupLayout() {
+
+		$('body').addClass('js');
+
+		$('#loading').html('<span>Loading...</span>');
+
+		navHeight = $( ".sitenav .inner ul" ).outerHeight();
+
+		$( ".sitenav .inner" ).height(navHeight);
+
+		if ($('#wpadminbar').length != 0) {
+			var adminbarheight = $('#wpadminbar').outerHeight();
+			$('.header').css('top', adminbarheight + 'px');
+		}
+
+		var headerPadding = $('.header .padding').outerHeight();
+
+		$('.layout').css('margin-top', headerPadding + 'px');
 
 	}
 
 	$(document).ready( function() {
-		$('body').addClass('js');
-		$('#loading').html('<span>Loading...</span>');
+		setupLayout();
+
+		$('h1').on('hover', function(event) {
+			event.preventDefault();
+			showNav();
+		});
+
 	});
 
 	$(window).load( function() {
-		setupGrid();
 		$('#loading').hide();
 	});
 
-	$(window).resize( function() {
-		setupGrid();
+	$(window).scroll(function() {
+		var viewportHeight = $(window).height();
+		var scrolltop = $(window).scrollTop();
+
+		if ( scrolltop > viewportHeight * 0.66 ) {
+			hideNav();
+		} else {
+			showNav();
+		}
 	});
 
 })(jQuery);

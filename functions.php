@@ -2,7 +2,7 @@
 
 function enqueue_scripts_method() {
 
-	$version = "a";
+	$version = "b";
 
 	// Remove Unnecessary Code
 	// http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
@@ -16,11 +16,14 @@ function enqueue_scripts_method() {
 
 	if(!wp_script_is('jquery')) wp_enqueue_script("jquery");
 
-	// Packery
-
 	$packeryjs = get_template_directory_uri() . '/js/packery.pkgd.min.js';
 	wp_register_script('packeryjs',$packeryjs, false, $version);
 	wp_enqueue_script( 'packeryjs',array('jquery'));
+
+	$jqueryuijs = get_template_directory_uri() . '/js/jquery-ui-1.10.4.custom.min.js';
+	wp_register_script('jqueryuijs',$jqueryuijs, false, $version);
+	wp_enqueue_script( 'jqueryuijs');
+
 
 	if ( is_front_page() ) :
 
@@ -44,9 +47,9 @@ function enqueue_scripts_method() {
 
 		// Layout
 
-		$jqueryuijs = get_template_directory_uri() . '/js/jquery-ui-1.10.4.custom.min.js';
-		wp_register_script('jqueryuijs',$jqueryuijs, false, $version);
-		wp_enqueue_script( 'jqueryuijs');
+		$pinjs = get_template_directory_uri() . '/js/jquery.pin.min.js';
+		wp_register_script('pinjs',$pinjs, false, $version);
+		wp_enqueue_script( 'pinjs',array('jquery') );
 
 		$babbqjs = get_template_directory_uri() . '/js/jquery.ba-bbq.js';
 		wp_register_script('babbqjs',$babbqjs, false, $version);
@@ -62,7 +65,7 @@ function enqueue_scripts_method() {
 
 		$homepagejs = get_template_directory_uri() . '/js/homepage.js';
 		wp_register_script('homepagejs',$homepagejs, false, $version);
-		wp_enqueue_script( 'homepagejs',array('jquery','jsrenderjs','tumblrkitjs','babbqjs','scrolltojs','localScrolljs','jqueryuijs') );
+		wp_enqueue_script( 'homepagejs',array('jquery','jsrenderjs','tumblrkitjs','babbqjs','scrolltojs','localScrolljs','jqueryuijs','pinjs') );
 
 	else:
 
@@ -74,7 +77,7 @@ function enqueue_scripts_method() {
 
 		$slideshowjs = get_template_directory_uri() . '/js/slideshow.js';
 		wp_register_script('slideshowjs',$slideshowjs, false, $version);
-		wp_enqueue_script( 'slideshowjs',array('jquery','colorboxjs') );
+		wp_enqueue_script( 'slideshowjs',array('jquery','colorboxjs','jqueryuijs') );
 
 	endif;
 

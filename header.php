@@ -55,6 +55,7 @@
 
 <?php endif; ?>
 
+<div class="line"></div>
 
 </div>
 

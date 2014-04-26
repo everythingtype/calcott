@@ -3,8 +3,38 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 
 (function($) {
 
-	function instaDate(time) {
-		console.log(time);
+	jQuery.fn.setHeight = function () {
+
+
+		var windowheight = $(window).height();
+
+		thisHeight = $(this).outerHeight();
+
+		if ( thisHeight <= windowheight ) {
+			$(this).height(windowheight);
+		} else {
+			$(this).height('auto');
+		}
+
+		var headerHeight = $(this).find('.stripeheader').outerHeight();
+//		$(this).find('h2').css('padding-top',headerHeight+'px');
+		$(this).find('.toppadding').height(headerHeight);
+
+	}
+
+	function setupGrid() {
+
+		$('.thumbnails').packery({
+			itemSelector: '.thumb',
+			transitionDuration: "0"
+		});
+
+		$('#portfoliosblock').setHeight();
+		$('#projectsblock').setHeight();
+		$('#updatesblock').setHeight();
+		$('#infoblock').setHeight();
+		$('#otherblock').setHeight();
+
 	}
 
 	function openNews() {
@@ -22,6 +52,16 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 	}
 
 	$(document).ready( function() {
+
+		// $("#projectsheader").pin({
+		//       containerSelector: "#projectsblock"
+		// });
+
+		var topHeaderHeight = $('.header').outerHeight();
+
+		$('.blockanchor').css('top','-' + topHeaderHeight + 'px');
+
+
 
 		$.localScroll({
 			'duration' : 300,
@@ -94,6 +134,16 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 		});
 		feed.run();
 
+		setupGrid();
+
+	});
+
+	$(window).load( function() {
+		setupGrid();
+	});
+
+	$(window).resize( function() {
+		setupGrid();
 	});
 
 })(jQuery);

@@ -4,16 +4,25 @@
 
 get_header(); ?>
 
+<a id="portfolios" class="blockanchor"></a>
+
 <div class="home">
 
-	<div id="portfolios">
+	<div id="portfoliosblock">
 		<div class="thumbnails">
 			<?php get_template_part('parts/portfolios'); ?>
 		</div>
 	</div><!-- portfolios -->
 
-	<div id="projects">
-		<h2>Projects</h2>
+	<a id="projects" class="blockanchor"></a>
+	<div id="projectsblock" class="stripe">
+
+		<div id="projectsheader" class="stripeheader">
+			<h2>Projects</h2>
+		</div>
+
+		<div class="toppadding"></div>
+
 		<div class="inner">
 			<div class="thumbnails">
 				<?php get_template_part('parts/projects'); ?>
@@ -21,9 +30,17 @@ get_header(); ?>
 		</div>
 	</div><!-- projects -->
 
-	<div id="updates">
-		<h2>Updates</h2>
-		<div class="line"></div>
+	<div id="updatesblock" class="stripe">
+
+		<a id="updates" class="blockanchor"></a>
+
+		<div class="stripeheader">
+			<h2>Updates</h2>
+			<div class="line"></div>
+		</div>
+
+		<div class="toppadding"></div>
+
 		<div class="inner">
 
 			<div class="column"><div class="padding">
@@ -79,8 +96,15 @@ get_header(); ?>
 		</div>
 	</div><!-- updates -->
 
-	<div id="info">
-		<h2>Info</h2>
+	<a id="info" class="blockanchor"></a>
+	<div id="infoblock" class="stripe">
+
+		<div class="stripeheader">
+			<h2>Info</h2>
+		</div>
+
+		<div class="toppadding"></div>
+
 		<div class="inner">
 			<div class="column"><div class="padding">
 				<h3>About Nicholas Calcott</h3>
@@ -107,9 +131,16 @@ get_header(); ?>
 		</div>
 	</div><!-- about -->
 
-	<div id="other">
-		<h2>Other Stuff</h2>
-		<div class="line"></div>
+	<a id="other" class="blockanchor"></a>
+	<div id="otherblock" class="stripe">
+		
+		<div class="stripeheader">
+			<h2>Other Stuff</h2>
+			<div class="line"></div>
+		</div>
+
+		<div class="toppadding"></div>
+
 		<div class="inner">
 			<div class="column"><div class="padding">
 				<h3>Exhibitions</h3>

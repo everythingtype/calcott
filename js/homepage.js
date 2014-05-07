@@ -3,8 +3,9 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 
 (function($) {
 
-	jQuery.fn.setHeight = function () {
+	var currentTitle = "none";
 
+	jQuery.fn.setHeight = function () {
 
 		var windowheight = $(window).height();
 
@@ -16,9 +17,70 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 			$(this).height('auto');
 		}
 
-		var headerHeight = $(this).find('.stripeheader').outerHeight();
-//		$(this).find('h2').css('padding-top',headerHeight+'px');
-		$(this).find('.toppadding').height(headerHeight);
+	}
+
+	jQuery.fn.isScrolledIntoView = function () {
+
+		var heightToThis = $(this).offset().top;
+		var thisHeight = $(this).height();
+		var thisRange = heightToThis + thisHeight;
+
+		var headerHeight = $('.header').outerHeight();
+
+		var scrollPosition = $(window).scrollTop() + headerHeight + 1;
+
+		if ( (scrollPosition >= heightToThis ) && (scrollPosition <= thisRange ) ) {
+			return true;
+		}
+
+	}
+
+	jQuery.fn.pinTitle = function () {
+
+		var thestripeheader = $(this).find('.stripeheader').clone();
+		$('#fixedtitle').html(thestripeheader);
+
+	}
+
+	function setupFixedTitles() {
+
+		if ( $('#projectsblock').isScrolledIntoView() ) {
+
+			if ( currentTitle != 'projects' ) {
+				currentTitle = 'projects';
+				$('#projectsblock').pinTitle();	
+			}
+
+		} else if ( $('#updatesblock').isScrolledIntoView() ) {
+
+			if ( currentTitle != 'updates' ) {
+				currentTitle = 'updates';
+				$('#updatesblock').pinTitle();
+			}
+
+		} else if ( $('#infoblock').isScrolledIntoView() ) {
+
+			if ( currentTitle != 'info' ) {
+				currentTitle = 'info';
+				$('#infoblock').pinTitle();
+			}
+
+		} else if ( $('#otherblock').isScrolledIntoView() ) {
+
+			if ( currentTitle != 'other' ) {
+				currentTitle = 'other';
+				$('#otherblock').pinTitle();
+			}
+
+		} else {
+
+			if ( currentTitle != 'none' ) {
+				currentTitle = 'none';
+				$('#fixedtitle').html('');
+
+			}
+
+		}
 
 	}
 
@@ -53,15 +115,10 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 
 	$(document).ready( function() {
 
-		// $("#projectsheader").pin({
-		//       containerSelector: "#projectsblock"
-		// });
-
 		var topHeaderHeight = $('.header').outerHeight();
 
 		$('.blockanchor').css('top','-' + topHeaderHeight + 'px');
-
-
+		$('#fixedtitle').css('top', topHeaderHeight + 'px');
 
 		$.localScroll({
 			'duration' : 300,
@@ -135,15 +192,32 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 		feed.run();
 
 		setupGrid();
+		setupFixedTitles();
 
 	});
 
 	$(window).load( function() {
 		setupGrid();
+		setupFixedTitles();
+
+		var anchor = $.param.fragment();
+
+		if (anchor !== '') {
+			$.scrollTo(
+				'#'+anchor,
+				300
+			);
+		}
+
 	});
 
 	$(window).resize( function() {
 		setupGrid();
+		setupFixedTitles();
+	});
+
+	$(window).scroll( function() {
+		setupFixedTitles();
 	});
 
 })(jQuery);

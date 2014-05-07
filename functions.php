@@ -2,7 +2,7 @@
 
 function enqueue_scripts_method() {
 
-	$version = "b";
+	$version = "e";
 
 	// Remove Unnecessary Code
 	// http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
@@ -46,10 +46,6 @@ function enqueue_scripts_method() {
 		wp_enqueue_script( 'tumblrkitjs',array('jquery','jsrenderjs'));
 
 		// Layout
-
-		$pinjs = get_template_directory_uri() . '/js/jquery.pin.min.js';
-		wp_register_script('pinjs',$pinjs, false, $version);
-		wp_enqueue_script( 'pinjs',array('jquery') );
 
 		$babbqjs = get_template_directory_uri() . '/js/jquery.ba-bbq.js';
 		wp_register_script('babbqjs',$babbqjs, false, $version);

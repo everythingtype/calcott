@@ -1,6 +1,10 @@
 /*
 Theme Name: Nicholas Calcott
+Author: Marty Spellerberg
+Author URI: http://www.martyspellerberg.com/
 
+Designed by Everything Type Company, http://www.etc-nyc.com/
+Developed by Marty Spellerberg, http://www.martyspellerberg.com/
 
 PxGrotesk-Bold
 PxGrotesk-BoldIta
@@ -45,7 +49,7 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 .topnav .active a { color: #3e7be4; }
 
 .sitenav {  z-index: 1; font-size: 20px; line-height: 1.55; position: relative; margin: 0; }
-.sitenav .inner { position: absolute; top: 0; width: 300px; overflow: hidden; }
+.sitenav .inner { position: absolute; top: 0; overflow: hidden; }
 .sitenav ul { margin: 0; padding: 0; list-style: none; }
 .js .sitenav ul { position: absolute; bottom: 0; }
 .sitenav li { margin: 0; padding: 0;}
@@ -69,24 +73,25 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 
 
 .thumbnails { overflow: hidden; margin-left: 20px; }
-.thumb { float: left; width: 25%; text-align: center;  margin-bottom: 20px; line-height: 0; }
+.thumb { float: left; width: 33.33333333333333%; text-align: center;  margin-bottom: 20px; line-height: 0; }
 .thumb .thumbinner {  padding: 0 20px 0 0; height: 100%; }
-.thumb img { max-height: 295px; }
+.thumb img { max-height: 379px; }
 .thumb h4 { text-align: left; font-size: 14px; line-height: 1.2; margin: .25em 0;}
 .thumb a { color: #8a8b8e; }
 
 #portfoliosblock {}
 #portfoliosblock .inner {}
+#portfoliosblock h4 { display: none; }
 
-#projectsblock {}
+#projectsblock { background: #000; }
 #projectsblock a { color: #8a8b8e; }
-#projectsblock .inner { background: #000; padding-top: 20px; height: 100%; }
+#projectsblock .inner { padding-top: 20px; }
 
 #updatesblock h3 { border-bottom: none; font-size: 14px; margin: 0 0 .5em 0;  color: #8a8b8e; line-height: 1; }
 #updatesblock em { font-style: normal; color: #8a8b8e; border-bottom: none; font-size: 14px; }
 #updatesblock a {  color: #282828; border-bottom: 2px solid #a7a8aa; }
 
-#updatesblock .line {border-top: 1px solid #E2E2E3; margin: 0 20px; }
+
 #updatesblock .inner {  padding: 20px 0 20px 20px;  overflow: hidden; }
 
 #updatesblock .column .box {  background: #f3f3f4; }
@@ -96,13 +101,15 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 
 #updatesblock .also {clear: both; }
 	
-#thetweet {color: #3e7be4; font-size: 32px; padding: 5px 20px; }
+#thetweet {color: #3e7be4; font-size: 32px; padding: 10px 20px; line-height: 1.2; }
 #thetweet p {margin: 0;}
 #thetweet a { color: #3e7be4; border-bottom: none; border-bottom: 2px solid #8cb0ee; }
+#thetweet a:before { content: "click here";}
+#thetweet a span {display: none}
 #thetweet .timePosted {display: none; }
 
-#infoblock { line-height: 1.25; }
-#infoblock .inner { background: #3e7be4; color: #fff;  padding: 20px 0 20px 20px; overflow: hidden; }
+#infoblock { line-height: 1.25; background: #3e7be4; color: #fff;  }
+#infoblock .inner {  padding: 20px 0 20px 20px; overflow: hidden; }
 #infoblock .small { font-size: 14px; line-height: 1.2; }
 #infoblock h3 {  border-bottom: 2px solid #fff;  }
 #infoblock h4 span {border-bottom: 2px solid #fff;}
@@ -114,29 +121,34 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 #mc-embedded-subscribe { background: #fff; border: none; border-radius: 1em; font-size: 14px; font-family: 'PxGrotesk-Bold', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; letter-spacing: 1px; text-transform: uppercase; color: #3e7be4; margin: 1em 0; padding: .5em 1em; }
 
 #otherblock { line-height: 1.25;  }
-#otherblock .line {border-top: 1px solid #E2E2E3; margin: 0 20px; }
+
 #otherblock .inner { padding: 20px 0 20px 20px; overflow: hidden; }
 #otherblock a { color: #282828; border-bottom: 2px solid #a7a8aa; }
+#otherblock ul{list-style:none; padding-left:0;}
+#otherblock li {padding-left:10px; text-indent:-10px;}
 
 .book { text-align: center;  margin-bottom: 20px; line-height: 0; }
 .book img { max-height: 295px; }
 .book h4 { text-align: left; font-size: 14px; line-height: 1.2; margin: .25em 0;}
-#other .book a { color: #8a8b8e; border-bottom: none; }
+#otherblock .book a { color: #8a8b8e; border-bottom: none; }
 
-.js .stripe { position: relative; }
-.js .stripe .stripeheader { position: absolute; top: 0; left: 0; width: 100%; background: #fff; z-index: 1; }
-.js .stripe .inner { box-sizing: border-box }
+
+.stripeheader { background: #fff; overflow: hidden; }
+.stripeheader .line {border-top: 1px solid #E2E2E3; margin: 0 20px; }
+
 
 a.blockanchor { border-bottom: none !important; }
 .js a.blockanchor { position: relative; display: block; }
 
+.js #fixedtitle {position: fixed; width: 100%; background: #fff; z-index: 1; text-align: center}
+
 /* News */
 
-#news { width: 406px; position: absolute; top: 35px; right: 105px;  }
+#news { width: 295px; position: absolute; top: 35px; right: 105px;  }
 #news .inner {background: #fff; border: 3px solid #3e7be4; padding: 20px 20px 0 20px; }
-#news h2 { margin: 0; font-size: 32px; line-height: 1; border-bottom: none; text-align: left; color: #282828; }
-#news h3 { font-size: 20px; color: #8a8b8e; border-top: 1px solid #a7a8aa; border-bottom: none; margin: 0; }
-#news img { max-width: 82%; margin-top: .5em; }
+#news h2 { margin: 0; font-size: 20px; line-height: 1; border-bottom: none; text-align: left; color: #282828; }
+#news h3 { font-size: 20px; color: #8a8b8e; border-bottom: none; margin: 0; }
+#news img { margin-top: .5em; }
 #news p { margin: 0; color: #3e7be4; line-height: 1.25; }
 #news .item { margin: 20px 0; }
 #news .item a { color: #3e7be4; border-bottom: 2px solid #8cb0ee; }
@@ -158,10 +170,10 @@ a.blockanchor { border-bottom: none !important; }
 .js .infobox:hover { cursor: move; }
 
 .slideshow {  }
-.slide { float: left; width: 25%; text-align: center;  margin-bottom: 20px;  line-height: 0;}
+.slide { float: left; width: 33.33333333333333%; text-align: center;  margin-bottom: 20px;  line-height: 0;}
 .slide .slideinner {  padding: 0 20px 0 0; height: 100%; }
 .slide .caption {display: none; }
-.slide img { max-height: 295px; }
+.slide img { max-height: 379px; }
 .slide a { display: block; }
 
 .js .slide  .slideinner { cursor: pointer; }
@@ -200,7 +212,7 @@ a.blockanchor { border-bottom: none !important; }
 
 
 
-/* Colorbox Core Style */
+/* Colorbox */
 
 #colorbox { position:absolute; top:0; left:0; z-index:9999; }
 #cboxOverlay { top:0; left:0; z-index:9999; position:fixed; width:100%; height:100%; background: #fff; } 

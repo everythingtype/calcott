@@ -37,9 +37,17 @@
 
 		$('#loading').html('<span>Loading...</span>');
 
-		navHeight = $( ".sitenav .inner ul" ).outerHeight();
+//		navHeight = $( ".sitenav .inner ul" ).outerHeight();
+//		Returns incorrect value in FF.
+
+//		navWidth = $( ".sitenav .inner ul" ).outerWidth(); 
+//		Returns incorrect value. Font not loaded?
+
+		navHeight = 190;
+		navWidth = 185;
 
 		$( ".sitenav .inner" ).height(navHeight);
+		$( ".sitenav .inner" ).width(navWidth);
 
 		if ($('#wpadminbar').length != 0) {
 			var adminbarheight = $('#wpadminbar').outerHeight();

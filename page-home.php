@@ -17,7 +17,7 @@ get_header(); ?>
 	<a id="projects" class="blockanchor"></a>
 	<div id="projectsblock" class="stripe">
 
-		<div id="projectsheader" class="stripeheader">
+		<div class="stripeheader">
 			<h2>Projects</h2>
 		</div>
 
@@ -45,14 +45,6 @@ get_header(); ?>
 
 			<div class="column"><div class="padding">
 
-					<div id="instafeed"></div>
-
-				<p class="handle"><a href="http://instagram.com/ncott">Instagram</a><br />
-				<em>@ncott</em></p>
-			</div></div>
-
-			<div class="column"><div class="padding">
-
 				<h3 id="thetweetdate">&nbsp;</h3>
 
 				<div class="box"><div class="height"><div class="proportional">
@@ -62,6 +54,14 @@ get_header(); ?>
 				</div></div></div>
 				<p class="handle"><a href="https://twitter.com/NicholasCalcott">Twitter</a><br />
 				<em>@NicholasCalcott</em></p>
+			</div></div>
+
+			<div class="column"><div class="padding">
+
+					<div id="instafeed"></div>
+
+				<p class="handle"><a href="http://instagram.com/ncott">Instagram</a><br />
+				<em>@ncott</em></p>
 			</div></div>
 
 			<div class="column"><div class="padding">
@@ -88,8 +88,8 @@ get_header(); ?>
 
 			<div class="also">
 				<p>Also see:<br />
-				<a href="">Facebook</a><br />
-				<a href="">LinkedIn</a><br />
+				<a href="https://www.facebook.com/nicholas.calcott">Facebook</a><br />
+				<a href="https://www.linkedin.com/pub/nicholas-calcott/1a/834/536">LinkedIn</a><br />
 				<a href="/feed/">RSS</a></p>
 			</div>
 
@@ -165,6 +165,8 @@ get_header(); ?>
 			<?php get_template_part('parts/news'); ?>
 		</div>
 	</div>
+
+	<div id="fixedtitle"></div>
 
 </div>
 

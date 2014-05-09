@@ -1,13 +1,11 @@
 /*
 Theme Name: Nicholas Calcott
+Theme URI: http://github.com/everythingtype/calcott
 Author: Marty Spellerberg
 Author URI: http://www.martyspellerberg.com/
 
 Designed by Everything Type Company, http://www.etc-nyc.com/
 Developed by Marty Spellerberg, http://www.martyspellerberg.com/
-
-PxGrotesk-Bold
-PxGrotesk-BoldIta
 
 */
 	
@@ -30,15 +28,11 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 .layout img { max-width: 100%; max-height: 100%; }
 
 .js .header {  width: 100%; z-index: 2; position: fixed; top: 0; left: 0; }
-.header .padding {  overflow: hidden; text-align: center; position: relative; padding: 40px 20px 0 20px; background: #fff; }
-.header .line {border-bottom: 1px solid #E2E2E3; clear: both; }
+.header .padding {  overflow: hidden; text-align: center; position: relative; padding: 4px 20px 0 20px; background: #fff; }
+.header .line {border-bottom: 2px solid #E2E2E3; clear: both;}
 
-.header h1 { font-size: 20px; margin: 0; float: left; }
+.header h1 { font-size: 20px; margin: 0; float: left; padding-bottom: 4px; }
 .header h1 a {color: #282828;}
-.header h2 { font-size: 20px; margin: 0 200px; }
-	
-.header a.showinfo { cursor: pointer; font-size: 14px; color: #fff; background: #8a8b8e; padding: 0 .25em; margin-left: 1.25em; display: inline-block; line-height: 1.2; }
-.header a.showinfo.active { background: #3e7be4; }
 
 .topnav { float: right; overflow: hidden; display: none; }
 .js .topnav { display: block; }
@@ -48,15 +42,23 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 .topnav a {color: #8a8b8e;}
 .topnav .active a { color: #3e7be4; }
 
-.sitenav {  z-index: 1; font-size: 20px; line-height: 1.55; position: relative; margin: 0; }
-.sitenav .inner { position: absolute; top: 0; overflow: hidden; }
-.sitenav ul { margin: 0; padding: 0; list-style: none; }
-.js .sitenav ul { position: absolute; bottom: 0; }
+.pagetitle { width: 100%; text-align: center; padding-top: 7px;
+	-webkit-transition: opacity 0.2s ease;
+	-moz-transition: opacity 0.2s ease;
+	-o-transition: opacity 0.2s ease;
+	transition: opacity 0.2s ease;
+	}
+.pagetitle h2 { font-size: 60px; margin: 0; }
+.pagetitle a.showinfo { cursor: pointer; font-size: 20px; color: #fff; background: #282828; padding: 0 .25em .125em .25em; margin-left: 1em; display: inline-block; line-height: 1.2; vertical-align: 25%; }
+.pagetitle a.showinfo.active {  }
+.pagetitle.active {opacity: 0.2; }
+
+.sitenav ul { margin: 0; padding: 0; list-style: none;}
 .sitenav li { margin: 0; padding: 0;}
-.sitenav a { color: #8a8b8e; background: #fff; display: inline-block; padding: 0 .25em; margin: 0 0 7px .75em; }
+.sitenav a { color: #8a8b8e; display: block; float: left; margin-left: 1em; }
 .sitenav a:hover {color: #282828;}
 
-.content { margin: 0 20px 60px 20px; position: relative; padding-top: 26px; }
+.content { margin: 0 20px 60px 20px; position: relative; padding-top: 123px; }
 
 #loading { position: absolute; top: 0; width: 100%; z-index: 100; text-align: center; }
 #loading span { background: #fff; display: inline-block; padding: 0 .25em; color: #8a8b8e; }
@@ -160,11 +162,12 @@ a.blockanchor { border-bottom: none !important; }
 
 /* Gallery */
 
-.infobox { width: 100%; margin-top: 100px; position: absolute; top: 0; display: none; }
-.infobox .inner { border: 2px solid #3e7be4; background: #fff; max-width: 550px; margin: auto; z-index: 1; position: relative; display: none;}
-.infobox .inner .padding { padding: 45px; }
-.infobox h2 { margin: 0 0 1em 0; font-size: 32px; line-height: 1.1; }
-.infobox a.close { cursor: pointer; float: right; display: block; width: 19px; height: 19px; margin: 15px; background: url('images/close.svg') center center no-repeat; }
+.infobox { width: 100%; margin-top: 142px; position: absolute; top: 0; display: none; color: #8a8b8e; }
+.infobox .inner { border: 2px solid #282828; background: #fff; max-width: 731px; margin: auto; z-index: 1; position: relative; display: none;}
+.infobox .inner .padding { padding: 62px; }
+.infobox h2 { margin: 0 0 1em 0; font-size: 20px; line-height: 1.1; color: #282828;  }
+.infobox p { margin-top: 0; }
+.infobox a.close { cursor: pointer; float: right; display: block; width: 19px; height: 19px; margin: 20px; background: url('images/close.svg') center center no-repeat; }
 .infobox a.close span { display: none; }
 
 .js .infobox:hover { cursor: move; }

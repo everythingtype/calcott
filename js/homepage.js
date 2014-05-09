@@ -7,14 +7,20 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 
 	jQuery.fn.setHeight = function () {
 
+		var thisid = $(this).attr('id');
+
+
+		var thisHeight = $(this).outerHeight();
 		var windowheight = $(window).height();
 
-		thisHeight = $(this).outerHeight();
-
-		if ( thisHeight <= windowheight ) {
+		if ( thisHeight < windowheight ) {
 			$(this).height(windowheight);
+//			console.log(thisid + ': do, ' + thisHeight + ' < ' + windowheight );
+
+
 		} else {
 			$(this).height('auto');
+//			console.log(thisid + ': do not, ' + thisHeight + ' >= ' + windowheight );
 		}
 
 	}
@@ -115,6 +121,8 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 
 	$(document).ready( function() {
 
+//		console.log('READY');
+
 		var topHeaderHeight = $('.header').outerHeight();
 
 		$('.blockanchor').css('top','-' + topHeaderHeight + 'px');
@@ -197,7 +205,11 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 	});
 
 	$(window).load( function() {
+
+//		console.log('LOAD');
+
 		setupGrid();
+
 		setupFixedTitles();
 
 		var anchor = $.param.fragment();

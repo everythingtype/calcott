@@ -2,7 +2,7 @@
 
 function enqueue_scripts_method() {
 
-	$version = "e";
+	$version = "f";
 
 	// Remove Unnecessary Code
 	// http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
@@ -107,6 +107,23 @@ function get_ID_by_slug($page_slug) {
 	global $wpdb;
 	$page_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE ( post_name = '".$page_slug."' or post_title = '".$page_slug."' ) and post_status = 'publish' and post_type='page' ");
 	return $page_id;
+}
+
+function the_random_link() {
+
+	$mypages = get_pages(array(
+		'meta_key' => '_wp_page_template',
+		'meta_value' => 'page-gallery.php',
+		'hierarchical' => 0
+	));
+	
+	$rand_key = array_rand($mypages, 1);
+
+	print_r($rand_keys);
+
+	$thelink = get_permalink($mypages[$rand_key]->ID);
+
+	return $thelink;
 }
 
 

@@ -35,53 +35,48 @@
 
 <div class="layout">
 
-<div class="header">
-	
-<div class="padding">
+	<div class="header">
 
-<h1><span><a href="/"><?php bloginfo('name'); ?></a></span></h1>
+		<div class="padding">
 
-<?php if ( is_front_page() ) : ?>
+			<h1><span><a href="/"><?php bloginfo('name'); ?></a></span></h1>
 
-	<div class="topnav">
-	<ul>
-	<li id="newsbutton" class="active"><a>News</a></li>
-	</ul>
+			<?php if ( is_front_page() ) : 
+				$linkBase = '';
+			else :
+				$linkBase = '/';
+			endif;
+			?>
+
+			<div class="sitenav">
+				<ul>
+				<li><a href="<?php echo $linkBase; ?>#portfolios">Portfolios</a></li>
+				<li><a href="<?php echo $linkBase; ?>#projects">Projects</a></li>
+				<li><a href="<?php echo $linkBase; ?>#updates">Updates</a></li>
+				<li><a href="<?php echo $linkBase; ?>#info">Info</a></li>
+				<li><a href="<?php echo $linkBase; ?>#other">Other Stuff</a></li>
+				</ul>
+			</div>
+
+			<div class="topnav">
+				<ul>
+				<?php if ( is_front_page() ) : ?>
+					<li id="newsbutton" class="active"><a>News</a></li>
+				<?php endif; ?>
+					<li><a href="<?php echo the_random_link(); ?>">Random Sort</a></li>
+				</ul>
+			</div>
+
+			<div class="line"></div>
+
+		</div>
+
+		<?php if ( !is_front_page() ) : ?>
+		<div class="pagetitle">
+			<h2><?php the_title(); ?></h2>
+		</div>
+		<?php endif; ?>
+
+		<div id="loading"></div>
+
 	</div>
-
-<?php else :?>
-
-	<h2><?php the_title(); ?></h2>
-
-<?php endif; ?>
-
-<div class="line"></div>
-
-</div>
-
-<div class="sitenav">
-	<div class="inner">
-
-	<?php if ( is_front_page() ) : 
-		$linkBase = '';
-	else :
-		$linkBase = '/';
-	endif;
-	?>
-
-	<ul>
-	<li><a href="<?php echo $linkBase; ?>#portfolios">Portfolios</a></li>
-	<li><a href="<?php echo $linkBase; ?>#projects">Projects</a></li>
-	<li><a href="<?php echo $linkBase; ?>#updates">Updates</a></li>
-	<li><a href="<?php echo $linkBase; ?>#info">About &amp; Contact</a></li>
-	<li><a href="<?php echo $linkBase; ?>#other">Other Stuff</a></li>
-	</ul>
-
-	</div>
-
-	<div id="loading"></div>
-
-</div>
-
-
-</div>

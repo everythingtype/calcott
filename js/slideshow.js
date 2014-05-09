@@ -19,12 +19,14 @@
 
 	function openInfobox() {
 		$('.header').find('.showinfo').addClass('active');
+		$('.header').find('.pagetitle').addClass('active');
 		$('.infobox').show();
 		$('.infobox .inner').fadeIn('fast');	
 	}
 
 	function closeInfobox() {
 		$('.header').find('.showinfo').removeClass('active');
+		$('.header').find('.pagetitle').removeClass('active');
 		$('.infobox .inner').fadeOut('fast', function () {
 			$('.infobox').hide();
 		});

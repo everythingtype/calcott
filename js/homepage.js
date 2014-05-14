@@ -15,12 +15,10 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 
 		if ( thisHeight < windowheight ) {
 			$(this).height(windowheight);
-//			console.log(thisid + ': do, ' + thisHeight + ' < ' + windowheight );
 
 
 		} else {
 			$(this).height('auto');
-//			console.log(thisid + ': do not, ' + thisHeight + ' >= ' + windowheight );
 		}
 
 	}
@@ -33,7 +31,14 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 
 		var headerHeight = $('.header').outerHeight();
 
+		if ($('#wpadminbar').length != 0) {
+			headerHeight = headerHeight + $('#wpadminbar').outerHeight();
+		}
+
+
 		var scrollPosition = $(window).scrollTop() + headerHeight + 1;
+
+		scrollPosition = scrollPosition + 61; // Shim so that titles switch over stripe breaks
 
 		if ( (scrollPosition >= heightToThis ) && (scrollPosition <= thisRange ) ) {
 			return true;
@@ -43,18 +48,20 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 
 	jQuery.fn.pinTitle = function () {
 
-		var thestripeheader = $(this).find('.stripeheader').clone();
+		var thestripeheader = $(this).find('h2').clone();
 		$('#fixedtitle').html(thestripeheader);
 
 	}
 
 	function setupFixedTitles() {
 
+
 		if ( $('#projectsblock').isScrolledIntoView() ) {
 
 			if ( currentTitle != 'projects' ) {
 				currentTitle = 'projects';
 				$('#projectsblock').pinTitle();	
+				$('#fixedtitle').addClass('white');
 			}
 
 		} else if ( $('#updatesblock').isScrolledIntoView() ) {
@@ -62,6 +69,7 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 			if ( currentTitle != 'updates' ) {
 				currentTitle = 'updates';
 				$('#updatesblock').pinTitle();
+				$('#fixedtitle').removeClass('white');
 			}
 
 		} else if ( $('#infoblock').isScrolledIntoView() ) {
@@ -69,6 +77,7 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 			if ( currentTitle != 'info' ) {
 				currentTitle = 'info';
 				$('#infoblock').pinTitle();
+				$('#fixedtitle').addClass('white');
 			}
 
 		} else if ( $('#otherblock').isScrolledIntoView() ) {
@@ -76,15 +85,23 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 			if ( currentTitle != 'other' ) {
 				currentTitle = 'other';
 				$('#otherblock').pinTitle();
+				$('#fixedtitle').removeClass('white');
 			}
 
 		} else {
 
-			if ( currentTitle != 'none' ) {
-				currentTitle = 'none';
-				$('#fixedtitle').html('');
+			// if ( currentTitle != 'none' ) {
+			// 	currentTitle = 'none';
+			// 	$('#fixedtitle').html('');
+			// 
+			// }
 
+			if ( currentTitle != 'portfolios' ) {
+				currentTitle = 'portfolios';
+				$('#portfoliosblock').pinTitle();	
+				$('#fixedtitle').removeClass('white');
 			}
+
 
 		}
 
@@ -121,9 +138,11 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 
 	$(document).ready( function() {
 
-//		console.log('READY');
-
 		var topHeaderHeight = $('.header').outerHeight();
+		if ($('#wpadminbar').length != 0) {
+			topHeaderHeight = topHeaderHeight + $('#wpadminbar').outerHeight();
+		}
+
 
 		$('.blockanchor').css('top','-' + topHeaderHeight + 'px');
 		$('#fixedtitle').css('top', topHeaderHeight + 'px');
@@ -205,8 +224,6 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 	});
 
 	$(window).load( function() {
-
-//		console.log('LOAD');
 
 		setupGrid();
 

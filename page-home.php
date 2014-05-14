@@ -8,7 +8,10 @@ get_header(); ?>
 
 <div class="home">
 
-	<div id="portfoliosblock">
+	<div id="portfoliosblock" class="stripe">
+
+		<h2>Portfolios</h2>
+
 		<div class="thumbnails">
 			<?php get_template_part('parts/portfolios'); ?>
 		</div>
@@ -17,11 +20,7 @@ get_header(); ?>
 	<a id="projects" class="blockanchor"></a>
 	<div id="projectsblock" class="stripe">
 
-		<div class="stripeheader">
-			<h2>Projects</h2>
-		</div>
-
-		<div class="toppadding"></div>
+		<h2>Projects</h2>
 
 		<div class="inner">
 			<div class="thumbnails">
@@ -34,12 +33,7 @@ get_header(); ?>
 
 		<a id="updates" class="blockanchor"></a>
 
-		<div class="stripeheader">
-			<h2>Updates</h2>
-			<div class="line"></div>
-		</div>
-
-		<div class="toppadding"></div>
+		<h2>Updates</h2>
 
 		<div class="inner">
 
@@ -99,11 +93,7 @@ get_header(); ?>
 	<a id="info" class="blockanchor"></a>
 	<div id="infoblock" class="stripe">
 
-		<div class="stripeheader">
-			<h2>Info</h2>
-		</div>
-
-		<div class="toppadding"></div>
+		<h2>Info</h2>
 
 		<div class="inner">
 			<div class="column"><div class="padding">
@@ -134,12 +124,7 @@ get_header(); ?>
 	<a id="other" class="blockanchor"></a>
 	<div id="otherblock" class="stripe">
 		
-		<div class="stripeheader">
-			<h2>Other Stuff</h2>
-			<div class="line"></div>
-		</div>
-
-		<div class="toppadding"></div>
+		<h2>Other Stuff</h2>
 
 		<div class="inner">
 			<div class="column"><div class="padding">

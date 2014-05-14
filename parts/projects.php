@@ -4,7 +4,8 @@ $theslug = get_ID_by_slug('projects');
 
 $args = array(
 	'post_type' => 'page',
-	'parent' => $theslug
+	'parent' => $theslug,
+	'sort_column' => 'menu_order'
 );
 
 $postslist = get_pages($args);

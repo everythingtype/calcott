@@ -73,7 +73,12 @@
 
 		<?php if ( !is_front_page() ) : ?>
 		<div class="pagetitle">
-			<h2><?php the_title(); ?></h2>
+			<h2><?php if ( is_tax('imagetag') ) :
+					echo $wp_query->queried_object->name;
+				else :
+					the_title(); 
+				endif;
+			?></h2>
 		</div>
 		<?php endif; ?>
 

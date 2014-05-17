@@ -119,8 +119,6 @@ function the_random_link() {
 	
 	$rand_key = array_rand($mypages, 1);
 
-	print_r($rand_keys);
-
 	$thelink = get_permalink($mypages[$rand_key]->ID);
 
 	return $thelink;
@@ -130,6 +128,6 @@ function the_random_link() {
 // Includes
 
 require_once( 'functions/gallery.php' );
-
+require_once( 'functions/tagging.php' );
 
 ?>

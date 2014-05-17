@@ -61,6 +61,9 @@
 			maxWidth : '90%;',
 			maxHeight : '100%;',
 			current : '',
+			title : function(){
+			  return $(this).data('caption');
+			}
 		});
 
 	});

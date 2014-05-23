@@ -2,7 +2,7 @@
 
 function enqueue_scripts_method() {
 
-	$version = "h";
+	$version = "i";
 
 	// Remove Unnecessary Code
 	// http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
@@ -23,6 +23,14 @@ function enqueue_scripts_method() {
 	$jqueryuijs = get_template_directory_uri() . '/js/jquery-ui-1.10.4.custom.min.js';
 	wp_register_script('jqueryuijs',$jqueryuijs, false, $version);
 	wp_enqueue_script( 'jqueryuijs');
+
+	$scrolltojs = get_template_directory_uri() . '/js/jquery.scrollTo.min.js';
+	wp_register_script('scrolltojs',$scrolltojs, false, $version);
+	wp_enqueue_script( 'scrolltojs',array('jquery') );
+
+	$localScrolljs = get_template_directory_uri() . '/js/jquery.localScroll.min.js';
+	wp_register_script('localScrolljs',$localScrolljs, false, $version);
+	wp_enqueue_script( 'localScrolljs',array('jquery','scrolltojs') );
 
 
 	if ( is_front_page() ) :
@@ -50,14 +58,6 @@ function enqueue_scripts_method() {
 		$babbqjs = get_template_directory_uri() . '/js/jquery.ba-bbq.js';
 		wp_register_script('babbqjs',$babbqjs, false, $version);
 		wp_enqueue_script( 'babbqjs',array('jquery') );
-
-		$scrolltojs = get_template_directory_uri() . '/js/jquery.scrollTo.min.js';
-		wp_register_script('scrolltojs',$scrolltojs, false, $version);
-		wp_enqueue_script( 'scrolltojs',array('jquery') );
-
-		$localScrolljs = get_template_directory_uri() . '/js/jquery.localScroll.min.js';
-		wp_register_script('localScrolljs',$localScrolljs, false, $version);
-		wp_enqueue_script( 'localScrolljs',array('jquery','scrolltojs') );
 
 		$homepagejs = get_template_directory_uri() . '/js/homepage.js';
 		wp_register_script('homepagejs',$homepagejs, false, $version);
@@ -109,20 +109,7 @@ function get_ID_by_slug($page_slug) {
 	return $page_id;
 }
 
-function the_random_link() {
 
-	$mypages = get_pages(array(
-		'meta_key' => '_wp_page_template',
-		'meta_value' => 'page-gallery.php',
-		'hierarchical' => 0
-	));
-	
-	$rand_key = array_rand($mypages, 1);
-
-	$thelink = get_permalink($mypages[$rand_key]->ID);
-
-	return $thelink;
-}
 
 
 // Includes

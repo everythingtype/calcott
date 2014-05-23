@@ -18,6 +18,8 @@ a {text-decoration: none;
 	transition: color 0.2s ease;
 }
 
+a img { border: none; }
+
 *:focus {
     outline: none;
 }
@@ -49,6 +51,7 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 	transition: opacity 0.2s ease;
 	}
 .pagetitle h2 { font-size: 60px; margin: 0; }
+.pagetitle a {color: #282828;}
 .pagetitle a.showinfo { cursor: pointer; font-size: 20px; color: #fff; background: #282828; padding: 0 .25em .125em .25em; margin-left: 1em; display: inline-block; line-height: 1.2; vertical-align: 25%; }
 .pagetitle a.showinfo.active {  }
 .pagetitle.active {opacity: 0.2; }
@@ -60,10 +63,12 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 
 .content { margin: 0 20px 60px 20px; position: relative; padding-top: 123px; }
 
-#loading { position: absolute; top: 0; width: 100%; z-index: 100; text-align: center; }
-#loading span { background: #fff; display: inline-block; padding: 0 .25em; color: #8a8b8e; }
+#loading { position: fixed; bottom: 0; width: 100%; z-index: 100; text-align: center; padding: 0 20px 20px 0; }
+#loading span { display: inline-block; font-size: 60px; color: #3e7be4;  padding: 15px 20px 20px 20px; }
+/*#loading span { display: inline-block; font-size: 20px; color: #282828; background: #fff;  padding: 15px 20px 20px 20px; border: 2px solid #282828; }*/
 
 .fourofour {padding: 25px 20px 75px 20px;}
+
 
 /* Home */
 
@@ -112,6 +117,8 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 #thetweet a:before { content: "click here";}
 #thetweet a span {display: none}
 #thetweet .timePosted {display: none; }
+
+#tumblr .box {text-align: center; }
 
 #infoblock { line-height: 1.25; background: #3e7be4; color: #fff;  }
 #infoblock .inner {  padding: 123px 0 185px 20px; overflow: hidden; }
@@ -170,6 +177,18 @@ a.blockanchor { border-bottom: none !important; }
 
 .js #news:hover { cursor: move; }
 .js #newsbutton a:hover { cursor: pointer; }
+
+/* Index*/
+
+.index { margin: 30px 0 200px 20px; font-size: 14px; }
+.index ul { list-style: none; margin: 0; padding: 0; display: inline-block;  }
+.index ul li { padding: 0 0 30px 0; margin: 0;  }
+.index ul li ul li {  padding: 0; display: inline; }
+.index ul li ul li a {background: #8a8b8e; color: #fff; margin-right: 1em; }
+.index ul li ul li ul li a {background: #c4c5c7; }
+
+
+.index ul.firstchild { display: block;  }
 
 /* Gallery */
 

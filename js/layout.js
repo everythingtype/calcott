@@ -13,12 +13,19 @@
 
 		var headerPadding = $('.header .padding').outerHeight();
 
-		$('.layout').css('margin-top', headerPadding + 'px');
+		$('.layout').css('padding-top', headerPadding + 'px');
 
 	}
 
 	$(document).ready( function() {
 		setupLayout();
+
+		$.localScroll({
+			'duration' : 300,
+			'hash' : true,
+		});
+
+
 	});
 
 	$(window).load( function() {

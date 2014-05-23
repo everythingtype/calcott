@@ -26,6 +26,8 @@ Brooklyn, NY 11222</p>
 
 </div>
 
+<div id="loading"></div>
+
 <?php wp_footer(); ?>
 
 </body>

@@ -9,8 +9,11 @@ function the_calcott_gallery($imageids) {
 	
 	foreach ( $imageids as $imageid ) :
 	
-		$largesize = image_downsize( $imageid, 'medium' );
+		$largesize = image_downsize( $imageid, 'large' );
 		$large_url = $largesize[0];
+
+		$mediumsize = image_downsize( $imageid, 'medium' );
+		$medium_url = $mediumsize[0];
 
 		$imageobject = get_post( $imageid );
 
@@ -30,7 +33,7 @@ function the_calcott_gallery($imageids) {
 
 		if ( $img_caption ) $output .= 'data-caption="' . $img_caption. '"';
 
-		$output .= '><img src="' . $large_url . '" alt="' . $img_alt . '" />';
+		$output .= '><img src="' . $medium_url . '" alt="' . $img_alt . '" />';
 
 		$output .= '</div></div>';
 

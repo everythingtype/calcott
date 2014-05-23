@@ -31,7 +31,7 @@
 		<?php wp_head(); ?>
 
 </head>
-<body>
+<body id="top">
 
 <div class="layout">
 
@@ -63,7 +63,7 @@
 				<?php if ( is_front_page() ) : ?>
 					<li id="newsbutton" class="active"><a>News</a></li>
 				<?php endif; ?>
-					<li><a href="<?php echo the_random_link(); ?>">Random Sort</a></li>
+					<li><a href="<?php the_random_page_or_tag(); ?>">Random Sort</a></li>
 				</ul>
 			</div>
 
@@ -71,17 +71,15 @@
 
 		</div>
 
-		<?php if ( !is_front_page() ) : ?>
+		<?php if ( !is_front_page() && !is_page('index') ) : ?>
 		<div class="pagetitle">
-			<h2><?php if ( is_tax('imagetag') ) :
+			<h2><a href="#top"><?php if ( is_tax('imagetag') ) :
 					echo $wp_query->queried_object->name;
 				else :
 					the_title(); 
 				endif;
-			?></h2>
+			?></a></h2>
 		</div>
 		<?php endif; ?>
-
-		<div id="loading"></div>
 
 	</div>

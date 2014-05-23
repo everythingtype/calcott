@@ -151,7 +151,8 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<div id="fixedtitle"></div>
+	<div id="fixedtitle">
+	</div>
 
 </div>
 

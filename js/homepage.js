@@ -90,12 +90,6 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 
 		} else {
 
-			// if ( currentTitle != 'none' ) {
-			// 	currentTitle = 'none';
-			// 	$('#fixedtitle').html('');
-			// 
-			// }
-
 			if ( currentTitle != 'portfolios' ) {
 				currentTitle = 'portfolios';
 				$('#portfoliosblock').pinTitle();	
@@ -146,11 +140,6 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 
 		$('.blockanchor').css('top','-' + topHeaderHeight + 'px');
 		$('#fixedtitle').css('top', topHeaderHeight + 'px');
-
-		$.localScroll({
-			'duration' : 300,
-			'hash' : true,
-		});
 
 		$('#news').draggable();
 

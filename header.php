@@ -36,40 +36,41 @@
 <div class="layout">
 
 	<div class="header">
+		<div class="mask">
+		<div class="maxwidth">
+			<div class="padding">
 
-		<div class="padding">
+				<h1><span><a href="/"><?php bloginfo('name'); ?></a></span></h1>
 
-			<h1><span><a href="/"><?php bloginfo('name'); ?></a></span></h1>
+				<?php if ( is_front_page() ) : 
+					$linkBase = '';
+				else :
+					$linkBase = '/';
+				endif;
+				?>
 
-			<?php if ( is_front_page() ) : 
-				$linkBase = '';
-			else :
-				$linkBase = '/';
-			endif;
-			?>
+				<div class="sitenav">
+					<ul>
+					<li><a href="<?php echo $linkBase; ?>#portfolios">Portfolios</a></li>
+					<li><a href="<?php echo $linkBase; ?>#projects">Projects</a></li>
+					<li><a href="<?php echo $linkBase; ?>#updates">Updates</a></li>
+					<li><a href="<?php echo $linkBase; ?>#info">Info</a></li>
+					<li><a href="<?php echo $linkBase; ?>#other">Other Stuff</a></li>
+					</ul>
+				</div>
 
-			<div class="sitenav">
-				<ul>
-				<li><a href="<?php echo $linkBase; ?>#portfolios">Portfolios</a></li>
-				<li><a href="<?php echo $linkBase; ?>#projects">Projects</a></li>
-				<li><a href="<?php echo $linkBase; ?>#updates">Updates</a></li>
-				<li><a href="<?php echo $linkBase; ?>#info">Info</a></li>
-				<li><a href="<?php echo $linkBase; ?>#other">Other Stuff</a></li>
-				</ul>
-			</div>
-
-			<div class="topnav">
-				<ul>
-				<?php if ( is_front_page() ) : ?>
-					<li id="newsbutton" class="active"><a>News</a></li>
-				<?php endif; ?>
-					<li><a href="<?php the_random_page_or_tag(); ?>">Random Sort</a></li>
-				</ul>
-			</div>
+				<div class="topnav">
+					<ul>
+					<?php if ( is_front_page() ) : ?>
+						<li id="newsbutton" class="active"><a>News</a></li>
+					<?php endif; ?>
+						<li><a href="<?php the_random_page_or_tag(); ?>">Random Sort</a></li>
+					</ul>
+				</div>
 
 			<div class="line"></div>
-
-		</div>
+		</div></div>
+	</div>
 
 		<?php if ( !is_front_page() && !is_page('index') ) : ?>
 		<div class="pagetitle">

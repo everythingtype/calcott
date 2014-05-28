@@ -96,7 +96,6 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 				$('#fixedtitle').removeClass('white');
 			}
 
-
 		}
 
 	}

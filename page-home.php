@@ -12,9 +12,9 @@ get_header(); ?>
 
 		<h2>Portfolios</h2>
 
-		<div class="thumbnails">
+		<div class="maxwidth"><div class="thumbnails">
 			<?php get_template_part('parts/portfolios'); ?>
-		</div>
+		</div></div>
 	</div><!-- portfolios -->
 
 	<a id="projects" class="blockanchor"></a>
@@ -22,11 +22,11 @@ get_header(); ?>
 
 		<h2>Projects</h2>
 
-		<div class="inner">
+		<div class="inner"><div class="maxwidth">
 			<div class="thumbnails">
 				<?php get_template_part('parts/projects'); ?>
 			</div>
-		</div>
+		</div></div>
 	</div><!-- projects -->
 
 	<div id="updatesblock" class="stripe">
@@ -35,7 +35,7 @@ get_header(); ?>
 
 		<h2>Updates</h2>
 
-		<div class="inner">
+		<div class="maxwidth"><div class="inner">
 
 			<div class="column"><div class="padding">
 
@@ -87,7 +87,7 @@ get_header(); ?>
 				<a href="/feed/">RSS</a></p>
 			</div>
 
-		</div>
+		</div></div>
 	</div><!-- updates -->
 
 	<a id="info" class="blockanchor"></a>
@@ -95,7 +95,7 @@ get_header(); ?>
 
 		<h2>Info</h2>
 
-		<div class="inner">
+		<div class="maxwidth"><div class="inner">
 			<div class="column"><div class="padding">
 				<h3>About Nicholas Calcott</h3>
 
@@ -118,7 +118,7 @@ get_header(); ?>
 				<?php get_template_part('parts/newsletter'); ?>
 
 			</div></div>
-		</div>
+		</div></div>
 	</div><!-- about -->
 
 	<a id="other" class="blockanchor"></a>
@@ -126,7 +126,7 @@ get_header(); ?>
 		
 		<h2>Other Stuff</h2>
 
-		<div class="inner">
+		<div class="maxwidth"><div class="inner">
 			<div class="column"><div class="padding">
 				<h3>Exhibitions</h3>
 				<?php get_template_part('parts/exhibitions'); ?>
@@ -140,7 +140,7 @@ get_header(); ?>
 				<h3>Texts</h3>
 				<?php get_template_part('parts/texts'); ?>
 			</div></div>
-		</div>
+		</div></div>
 	</div><!-- other -->
 
 	<div id="news">

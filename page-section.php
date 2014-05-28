@@ -3,7 +3,7 @@
 /* Template Name: Section */
 
 get_header(); ?>
-<div class="content">
+<div class="maxwidth"><div class="content">
 
 		<?php if (have_posts()) : ?>
 
@@ -40,5 +40,5 @@ get_header(); ?>
 			<p>Sorry, page not found.</p>
 		<?php endif; ?>
 
-</div>
+</div></div>
 <?php get_footer(); ?>

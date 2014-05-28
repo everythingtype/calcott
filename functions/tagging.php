@@ -86,25 +86,23 @@ function get_recursive_index( $parent = 0 ) {
 
 	foreach ( $mycats as $mycat ) : 
 
-//		print_r($mycat);
-
 		$termlink = get_term_link( $mycat->slug, $taxonomy_name ); 
 		$termname = $mycat->name; 
 		$termcount = $mycat->count; 
 		$termparent = $mycat->parent; 
-
+		$termslug = $mycat->slug;
 
 		$children = get_recursive_index( $mycat->term_id );
 
 		if ( $children ) :
 			if ( $termparent != 0 ) :
-				$output .= '<li><a href="' . $termlink . '">' . $termname . '</a><ul>' . $children . '</ul></li>';
+				$output .= '<li><a href="' . $termlink . '" class="' . $termslug . '">' . $termname . '</a><ul>' . $children . '</ul></li>';
 			else :
-				$output .= '<li>' . $termname . '<ul class="firstchild">' . $children . '</ul></li>';
+				$output .= '<li class="headerterm">' . $termname . '<ul class="firstchild">' . $children . '</ul></li>';
 			endif;
 		else :
 			if ( $termcount > 4 ) :
-				$output .= '<li><a href="' . $termlink . '">' . $termname . '</a></li>';
+				$output .= '<li><a href="' . $termlink . '" class="' . $termslug . '">' . $termname . '</a></li>';
 			endif;
 		endif;
 
@@ -115,5 +113,7 @@ function get_recursive_index( $parent = 0 ) {
 	endif;
 
 }
+
+
 
 ?>

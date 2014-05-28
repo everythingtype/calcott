@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="content">
+<div class="maxwidth"><div class="content">
 
 <div class="slideshow">
 
@@ -39,5 +39,5 @@ the_calcott_gallery($imageids);
 	<div class="gutter"></div>
 </div>
 
-</div>
+</div></div>
 <?php get_footer(); ?>

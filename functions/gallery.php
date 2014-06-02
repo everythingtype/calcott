@@ -35,7 +35,7 @@ function the_calcott_gallery($imageids) {
 
 		$output .= '><img src="' . $medium_url . '" alt="' . $img_alt . '" />';
 
-		$output .= '</div></div>';
+		$output .= '</a></div></div>';
 
 		$i++; 
 		if ($i === $numItems ) $i = 0;

@@ -90,10 +90,10 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 
 		} else {
 
-			if ( currentTitle != 'portfolios' ) {
-				currentTitle = 'portfolios';
-				$('#portfoliosblock').pinTitle();	
-				$('#fixedtitle').removeClass('white');
+			if ( currentTitle != 'none' ) {
+				currentTitle = 'none';
+				$('#fixedtitle').html('');
+
 			}
 
 		}

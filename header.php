@@ -14,7 +14,6 @@
 			echo ' &mdash; ' . sprintf( __( 'Page %s' ), max( $paged, $page ) );
 		?></title>
 	
-		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 		<meta name="author" content="Designed by Everything Type Company, http://www.etc-nyc.com/ | Developed by Marty Spellerberg, http://www.martyspellerberg.com/" />
 
 		<!-- Fav Icons: Browser, iOS, Windows 8 -->
@@ -65,6 +64,7 @@
 						<li id="newsbutton" class="active"><a>News</a></li>
 					<?php endif; ?>
 						<li><a href="<?php the_random_page_or_tag(); ?>">Random Sort</a></li>
+						<li <?php if ( is_page('index') ) echo 'class="active"'; ?>><a href="/index">Index</a></li>
 					</ul>
 				</div>
 

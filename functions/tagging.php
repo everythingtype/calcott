@@ -98,7 +98,7 @@ function get_recursive_index( $parent = 0 ) {
 			if ( $termparent != 0 ) :
 				$output .= '<li><a href="' . $termlink . '" class="' . $termslug . '">' . $termname . '</a><ul>' . $children . '</ul></li>';
 			else :
-				$output .= '<li class="headerterm">' . $termname . '<ul class="firstchild">' . $children . '</ul></li>';
+				$output .= '<li class="headerterm"><span>' . $termname . '</span><ul class="firstchild">' . $children . '</ul></li>';
 			endif;
 		else :
 			if ( $termcount > 4 ) :

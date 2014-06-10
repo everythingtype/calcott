@@ -117,9 +117,10 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 #thetweet {color: #3e7be4; font-size: 32px; padding: 10px 20px; line-height: 1.2; }
 #thetweet p {margin: 0;}
 #thetweet a { color: #3e7be4; border-bottom: none; border-bottom: 2px solid #8cb0ee; }
-#thetweet a:before { content: "here";}
-#thetweet a span {display: none}
 #thetweet .timePosted {display: none; }
+
+#thetweet [data-scribe="element:url"]:before { content: "here";}
+#thetweet [data-scribe="element:url"] span {display: none}
 
 #tumblr .box {text-align: center; }
 

@@ -63,6 +63,7 @@ function enqueue_scripts_method() {
 		wp_register_script('homepagejs',$homepagejs, false, $version);
 		wp_enqueue_script( 'homepagejs',array('jquery','jsrenderjs','tumblrkitjs','babbqjs','scrolltojs','localScrolljs','jqueryuijs','pinjs') );
 
+	
 	else:
 
 		// Slideshow

@@ -1,3 +1,8 @@
+<div id="news">
+	<div class="inner">
+		<a class="close" title="Close"><span>Close</span></a>
+		<h2>News</h2>
+
 <?php
 
 $theslug = get_ID_by_slug('news');
@@ -30,3 +35,6 @@ endforeach;
 wp_reset_postdata();
 
 ?>
+
+	</div>
+</div>

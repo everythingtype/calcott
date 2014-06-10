@@ -35,7 +35,9 @@ function the_random_page_or_tag() {
 	$mypages = get_pages(array(
 		'meta_key' => '_wp_page_template',
 		'meta_value' => 'page-gallery.php',
-		'hierarchical' => 0
+		'hierarchical' => 0 ,
+		'exclude_tree' => 196 , 
+		'exclude_tree' => 217 
 	));
 
 	foreach ( $mypages as $mypage ) :
@@ -101,7 +103,7 @@ function get_recursive_index( $parent = 0 ) {
 				$output .= '<li class="headerterm"><span>' . $termname . '</span><ul class="firstchild">' . $children . '</ul></li>';
 			endif;
 		else :
-			if ( $termcount > 4 ) :
+			if ( $termcount > 2 ) :
 				$output .= '<li><a href="' . $termlink . '" class="' . $termslug . '">' . $termname . '</a></li>';
 			endif;
 		endif;

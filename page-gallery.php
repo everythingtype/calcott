@@ -62,7 +62,6 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-
 		<?php else : ?>
 			<p>Sorry, page not found.</p>
 		<?php endif; ?>

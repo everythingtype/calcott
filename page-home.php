@@ -39,19 +39,6 @@ get_header(); ?>
 
 			<div class="column"><div class="padding">
 
-				<h3 id="thetweetdate">&nbsp;</h3>
-
-				<div class="box"><div class="height"><div class="proportional">
-					
-					<div id="thetweet"></div>
-					
-				</div></div></div>
-				<p class="handle"><a href="https://twitter.com/NicholasCalcott">Twitter</a><br />
-				<em>@NicholasCalcott</em></p>
-			</div></div>
-
-			<div class="column"><div class="padding">
-
 					<div id="instafeed"></div>
 
 				<p class="handle"><a href="http://instagram.com/ncott">Instagram</a><br />
@@ -78,6 +65,19 @@ get_header(); ?>
 
 				<p class="handle"><a href="http://blog.nicholascalcott.com/">Tumblr</a><br />
 				<em>blog.nicholascalcott.com</em></p>
+			</div></div>
+
+			<div class="column"><div class="padding">
+
+				<h3 id="thetweetdate">&nbsp;</h3>
+
+				<div class="box"><div class="height"><div class="proportional">
+					
+					<div id="thetweet"></div>
+					
+				</div></div></div>
+				<p class="handle"><a href="https://twitter.com/NicholasCalcott">Twitter</a><br />
+				<em>@NicholasCalcott</em></p>
 			</div></div>
 
 			<div class="also">
@@ -143,13 +143,7 @@ get_header(); ?>
 		</div></div>
 	</div><!-- other -->
 
-	<div id="news">
-		<div class="inner">
-			<a class="close" title="Close"><span>Close</span></a>
-			<h2>News</h2>
-			<?php get_template_part('parts/news'); ?>
-		</div>
-	</div>
+	<?php get_template_part('parts/news'); ?>
 
 	<div id="fixedtitle">
 	</div>

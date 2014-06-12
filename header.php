@@ -84,3 +84,10 @@
 		<?php endif; ?>
 
 	</div>
+
+	<?php if ( !is_front_page() && !is_page('index') ) : ?>
+	<!-- <div class="breadcrumbs">
+		<p><a href="">Breadcrumb</a> &gt; <a href="">Breadcrumb</a></p>
+	</div> -->
+	<?php endif; ?>
+

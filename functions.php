@@ -2,7 +2,7 @@
 
 function enqueue_scripts_method() {
 
-	$version = "j";
+	$version = "m";
 
 	// Remove Unnecessary Code
 	// http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
@@ -109,7 +109,6 @@ function get_ID_by_slug($page_slug) {
 	$page_id = $wpdb->get_var("SELECT ID FROM $wpdb->posts WHERE ( post_name = '".$page_slug."' or post_title = '".$page_slug."' ) and post_status = 'publish' and post_type='page' ");
 	return $page_id;
 }
-
 
 
 

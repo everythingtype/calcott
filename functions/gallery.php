@@ -29,11 +29,11 @@ function the_calcott_gallery($imageids) {
 
 		$output .= '<div class="slide" id="slide' . $i . '"><div class="slideinner">';
 
-		$output .= '<a class="gallery" href="' . $large_url . '"';
+		$output .= '<a class="gallery" href="' . $large_url . '" data-caption="';
 
-		if ( $img_caption ) $output .= 'data-caption="' . $img_caption. '"';
+		if ( $img_caption ) $output .= $img_caption;
 
-		$output .= '><img src="' . $medium_url . '" alt="' . $img_alt . '" />';
+		$output .= '"><img src="' . $medium_url . '" alt="' . $img_alt . '" />';
 
 		$output .= '</a></div></div>';
 

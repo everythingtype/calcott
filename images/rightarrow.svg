@@ -5,10 +5,10 @@
 ]>
 <svg version="1.1"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-	 x="0px" y="0px" width="25px" height="25px" viewBox="0 0 25 25" overflow="visible" enable-background="new 0 0 25 25"
-	 xml:space="preserve">
+	 x="0px" y="0px" width="25px" height="25px" viewBox="-1.621 -2.98 25 25"
+	 overflow="visible" enable-background="new -1.621 -2.98 25 25" xml:space="preserve">
 <defs>
 </defs>
-<path fill="#8A8B8E" d="M24.998,25H0V0h24.998V25z M16.652,5.556h-2.78v2.777h2.78v2.778H2.781v2.778h13.872v2.777h2.781v-2.777
-	h2.782v-2.778h-2.782V8.333h-2.781V5.556z M13.872,19.443h2.78v-2.776h-2.78V19.443z"/>
+<path fill="#8A8B8E" d="M13.599,2.72h-2.72V0h2.72V2.72h2.72v2.72h2.72v2.72h2.72v2.721h-2.72v2.72h-2.72v-2.72H0V8.159h16.318
+	v-2.72h-2.72V2.72z M10.879,16.319h2.72v2.72h-2.72V16.319z M13.599,13.6h2.72v2.72h-2.72V13.6z"/>
 </svg>

@@ -2,7 +2,7 @@
 
 function enqueue_scripts_method() {
 
-	$version = "m";
+	$version = "o";
 
 	// Remove Unnecessary Code
 	// http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
@@ -102,7 +102,29 @@ if ( function_exists( 'add_theme_support' ) ) {
     add_theme_support( 'post-thumbnails' );
 }
 
+function is_page_or_subpage_of($slug) {
 
+	global $post;
+
+	if ( is_page() || is_search() ) :
+
+		if ( is_page($slug) ) :
+
+			return true;
+
+		else :
+
+			$targetid = get_ID_by_slug($slug);
+
+			$ancestors = get_post_ancestors($post->ID);
+			
+			if (in_array($targetid, $ancestors)) return true;
+
+		endif;
+
+	endif;
+
+}
 
 function get_ID_by_slug($page_slug) {
 	global $wpdb;

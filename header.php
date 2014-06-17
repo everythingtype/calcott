@@ -71,8 +71,12 @@
 			<div class="line"></div>
 		</div></div>
 	</div>
+	</div>
 
-		<?php if ( !is_front_page() && !is_page('index') ) : ?>
+	<?php if ( !is_front_page() && !is_page('index') ) : ?>
+
+		<?php get_template_part('parts/breadcrumbs'); ?>
+
 		<div class="pagetitle">
 			<h2><a href="#top"><?php if ( is_tax('imagetag') ) :
 					echo $wp_query->queried_object->name;
@@ -81,13 +85,6 @@
 				endif;
 			?></a></h2>
 		</div>
-		<?php endif; ?>
 
-	</div>
-
-	<?php if ( !is_front_page() && !is_page('index') ) : ?>
-	<!-- <div class="breadcrumbs">
-		<p><a href="">Breadcrumb</a> &gt; <a href="">Breadcrumb</a></p>
-	</div> -->
 	<?php endif; ?>
 

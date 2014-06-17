@@ -9,7 +9,7 @@ Developed by Marty Spellerberg, http://www.martyspellerberg.com/
 
 */
 	
-body { font-family: 'PxGrotesk-Bold', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 20px; line-height: 1.5; background: #fff; color: #282828; margin: 0; padding: 0; }
+body { font-family: 'PxGrotesk-Bold', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 20px; line-height: 1.5; background: #fff; color: #000; margin: 0; padding: 0; }
 
 a {text-decoration: none; 
 	-webkit-transition: color 0.2s ease;
@@ -30,14 +30,14 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 
 .layout img { max-width: 100%; max-height: 100%; }
 
-.header .mask { background: #fff; position: relative; z-index: 6; }
+.header .mask { background: #fff; }
 
-.js .header {  width: 100%; z-index: 3; position: fixed; top: 0; left: 0; }
+.js .header {  width: 100%; z-index: 4; position: fixed; top: 0; left: 0; }
 .header .padding {  overflow: hidden; text-align: center; position: relative; padding: 4px 20px 0 20px; }
 .header .line {border-bottom: 2px solid #E2E2E3; clear: both;}
 
 .header h1 { font-size: 20px; margin: 0; float: left; }
-.header h1 a {color: #282828;}
+.header h1 a {color: #000;}
 
 .topnav { float: right; overflow: hidden; display: none; }
 .js .topnav { display: block; }
@@ -48,47 +48,47 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 .topnav a:hover { color: #3e7be4; }
 .topnav .active a { color: #3e7be4; }
 
-.breadcrumbs { margin: 0 20px; color: #c4c5c7; z-index: 4; position: relative; }
+.breadcrumbs { margin: 0 20px; color: #c4c5c7; position: relative; z-index: 3; font-size: 14px;}
 .breadcrumbs p { margin: 0; }
 .breadcrumbs a { color: #c4c5c7;}
+.breadcrumbs a:hover { color: #000;}
 
-.pagetitle { width: 100%; text-align: center; padding-top: 7px;
+.pagetitle { width: 100%; text-align: center; padding-top: 7px; position: fixed; top: 36px; left: 0; z-index: 2;
 	-webkit-transition: opacity 0.2s ease;
 	-moz-transition: opacity 0.2s ease;
 	-o-transition: opacity 0.2s ease;
 	transition: opacity 0.2s ease;
 	}
 .pagetitle h2 { font-size: 60px; margin: 0; }
-.pagetitle a {color: #282828;}
-.pagetitle a.showinfo { cursor: pointer; font-size: 20px; color: #fff; background: #282828; padding: 0 .25em .125em .25em; margin-left: 1em; display: inline-block; line-height: 1.2; vertical-align: 25%; }
+.pagetitle a {color: #000;}
+.pagetitle a.showinfo { cursor: pointer; font-size: 20px; color: #fff; background: #000; padding: 0 .25em .125em .25em; margin-left: 1em; display: inline-block; line-height: 1.2; vertical-align: 25%; }
 .pagetitle a.showinfo.active {  }
 .pagetitle.active {opacity: 0.2; }
 
 .sitenav ul { margin: 0; padding: 0; list-style: none;}
 .sitenav li { margin: 0; padding: 0;}
 .sitenav a { color: #8a8b8e; display: block; float: left; margin-left: 1em; }
-.sitenav a:hover {color: #282828;}
+.sitenav a:hover {color: #000;}
 
-.content { margin: 0 20px 60px 20px; position: relative; padding-top: 123px; }
+.content { margin: 0 20px 60px 20px; position: relative; padding-top: 93px; }
 
 #loading { position: fixed; bottom: 0; width: 100%; z-index: 100; text-align: center; padding: 0 20px 20px 0; }
 #loading span { display: inline-block; font-size: 60px; color: #3e7be4;  padding: 15px 20px 20px 20px; }
-/*#loading span { display: inline-block; font-size: 20px; color: #282828; background: #fff;  padding: 15px 20px 20px 20px; border: 2px solid #282828; }*/
 
 .fourofour {padding: 25px 20px 75px 20px;}
-.blankpage a { color: #282828; border-bottom: 2px solid #a7a8aa; 
+.blankpage a { color: #000; border-bottom: 2px solid #a7a8aa; 
 	-webkit-transition: border-color 0.2s ease;
 	-moz-transition: border-color 0.2s ease;
 	-o-transition: border-color 0.2s ease;
 	transition: border-color 0.2s ease;
 }
-.blankpage a:hover { border-color: #282828; }
+.blankpage a:hover { border-color: #000; }
 
 /* Home */
 
 .home { position: relative; }
 
-.home h3 { margin: 0 0 20px 0; border-bottom: 2px solid #282828; font-size: 20px; }
+.home h3 { margin: 0 0 20px 0; border-bottom: 2px solid #000; font-size: 20px; }
 	
 .home .column { width: 33.33333333333333%; float: left; }
 .home .column .padding { padding-right: 20px; }
@@ -112,13 +112,13 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 
 #updatesblock h3 { border-bottom: none; font-size: 14px; margin: 0 0 .5em 0;  color: #8a8b8e; line-height: 1; }
 #updatesblock em { font-style: normal; color: #8a8b8e; border-bottom: none; font-size: 14px; }
-#updatesblock a {  color: #282828; border-bottom: 2px solid #a7a8aa; 
+#updatesblock a {  color: #000; border-bottom: 2px solid #a7a8aa; 
 	-webkit-transition: border-color 0.2s ease;
 	-moz-transition: border-color 0.2s ease;
 	-o-transition: border-color 0.2s ease;
 	transition: border-color 0.2s ease;
 }
-#updatesblock a:hover { border-color: #282828; }
+#updatesblock a:hover { border-color: #000; }
 
 #updatesblock .inner {  padding: 123px 0 100px 20px;  overflow: hidden; }
 
@@ -167,13 +167,13 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 #otherblock { line-height: 1.25;  }
 
 #otherblock .inner { padding: 123px 0 100px 20px; overflow: hidden; }
-#otherblock a { color: #282828; border-bottom: 2px solid #a7a8aa;
+#otherblock a { color: #000; border-bottom: 2px solid #a7a8aa;
 	-webkit-transition: border-color 0.2s ease;
 	-moz-transition: border-color 0.2s ease;
 	-o-transition: border-color 0.2s ease;
 	transition: border-color 0.2s ease;
 }
-#otherblock a:hover { border-color: #282828; }
+#otherblock a:hover { border-color: #000; }
 #otherblock ul{list-style:none; padding-left:0;}
 #otherblock li {padding-left:10px; text-indent:-10px;}
 
@@ -204,7 +204,7 @@ a.blockanchor { border-bottom: none !important; }
 
 #news { width: 295px; position: absolute; top: 35px; right: 10%; /*Changed from 230px to a percentage so it adjusts on resize */ z-index: 2; }
 #news .inner {background: #fff; border: 3px solid #3e7be4; padding: 20px 20px 0 20px; }
-#news h2 { margin: 0; font-size: 20px; line-height: 1; border-bottom: none; text-align: left; color: #282828; }
+#news h2 { margin: 0; font-size: 20px; line-height: 1; border-bottom: none; text-align: left; color: #000; }
 #news h3 { font-size: 20px; color: #8a8b8e; border-bottom: none; margin: 0; }
 #news img { margin-top: .5em; }
 #news p { margin: 0; color: #3e7be4; line-height: 1.25; }
@@ -239,8 +239,7 @@ a.blockanchor { border-bottom: none !important; }
 }
 
 .index ul { list-style: none; margin: 0; padding: 0; display: block; clear: both; overflow: hidden; display:inline;}
-.index ul li { padding: 37px 0 0 0; margin: 0;  }
-.index ul li:first-child { padding: 0; }
+.index ul li { margin:  0 0 37px 0; padding: 0;  }
 .index ul li.headerterm { clear: both; overflow: hidden; display:block;}
 .index ul li.headerterm span {display: block; padding-bottom: 2px; margin-bottom: 5px; }
 .index ul li ul li { padding: 0; display: inline; }
@@ -266,9 +265,9 @@ a.blockanchor { border-bottom: none !important; }
 /* Gallery */
 
 .infobox { width: 100%; margin-top: 142px; position: absolute; top: 0; display: none; color: #8a8b8e; }
-.infobox .inner { border: 2px solid #282828; background: #fff; max-width: 731px; margin: auto; z-index: 1; position: relative; display: none;}
+.infobox .inner { border: 2px solid #000; background: #fff; max-width: 731px; margin: auto; z-index: 1; position: relative; display: none;}
 .infobox .inner .padding { padding: 62px; }
-.infobox h2 { margin: 0 0 1em 0; font-size: 20px; line-height: 1.1; color: #282828;  }
+.infobox h2 { margin: 0 0 1em 0; font-size: 20px; line-height: 1.1; color: #000;  }
 .infobox p { margin-top: 0; }
 .infobox a.close { cursor: pointer; float: right; display: block; width: 19px; height: 19px; margin: 20px; background: url('images/close.svg') center center no-repeat; }
 .infobox a.close span { display: none; }
@@ -306,13 +305,13 @@ a.blockanchor { border-bottom: none !important; }
 /* Footer */
 
 .footer { overflow: hidden; border-top: 2px solid #E2E2E3; clear: both; margin: 0 20px 40px 20px; }
-.footer a { color: #282828; border-bottom: 2px solid #a7a8aa;
+.footer a { color: #000; border-bottom: 2px solid #a7a8aa;
 	-webkit-transition: border-color 0.2s ease;
 	-moz-transition: border-color 0.2s ease;
 	-o-transition: border-color 0.2s ease;
 	transition: border-color 0.2s ease;
 }
-.footer a:hover { border-color: #282828; }
+.footer a:hover { border-color: #000; }
 
 
 .footer p {margin: 0;}

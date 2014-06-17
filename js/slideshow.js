@@ -18,15 +18,15 @@
 	}
 
 	function openInfobox() {
-		$('.header').find('.showinfo').addClass('active');
-		$('.header').find('.pagetitle').addClass('active');
+		$('.showinfo').addClass('active');
+		$('.pagetitle').addClass('active');
 		$('.infobox').show();
 		$('.infobox .inner').fadeIn('fast');	
 	}
 
 	function closeInfobox() {
-		$('.header').find('.showinfo').removeClass('active');
-		$('.header').find('.pagetitle').removeClass('active');
+		$('.showinfo').removeClass('active');
+		$('.pagetitle').removeClass('active');
 		$('.infobox .inner').fadeOut('fast', function () {
 			$('.infobox').hide();
 		});
@@ -37,11 +37,11 @@
 		setupGrid();
 
 		if ( $('.infobox').length ) {
-			$('.header').find('h2').append('<a title="Info" class="showinfo">Info</a>');
+			$('.pagetitle').find('h2').append('<a title="Info" class="showinfo">Info</a>');
 			$('.infobox').draggable();
 		}
 
-		$('.header').find('.showinfo').on('click', function(event) {
+		$('.showinfo').on('click', function(event) {
 			if ( $(this).hasClass('active') ) {
 				closeInfobox();
 			} else {

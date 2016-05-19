@@ -20,7 +20,7 @@ foreach ($postslist as $post) : setup_postdata($post);
 	$count = 1; 
 
 	foreach($rows as $row) :
-		if ( $count < 3 ) :
+		if ( $count < 4 ) :
 			echo '<div class="item">';
 				if ( $row['when'] ) echo '<h3>' . $row['when'] . '</h3>';
 				if ( $row['what'] ) echo wpautop( $row['what'] );

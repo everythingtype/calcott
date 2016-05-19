@@ -36,8 +36,9 @@ function the_random_page_or_tag() {
 		'meta_key' => '_wp_page_template',
 		'meta_value' => 'page-gallery.php',
 		'hierarchical' => 0 ,
-		'exclude_tree' => 196 , 
-		'exclude_tree' => 217 
+		'exclude_tree' => 196 , 217 ,
+		'exclude' => 6 , 8 , 128 , 19 , 20, 90
+		
 	));
 
 	foreach ( $mypages as $mypage ) :
@@ -46,7 +47,9 @@ function the_random_page_or_tag() {
 
 	$mycats = get_terms( 'imagetag', array(
 		'hide_empty' => true,
-		'hierarchical' => true
+		'hierarchical' => true,
+		'exclude' => 4, 6, 17, 19, 20, 128 
+
 	));
 
 //	print_r($mycats);

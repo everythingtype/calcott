@@ -10,6 +10,7 @@
 	array(
 		'post_type' => 'attachment', 
 		'posts_per_page' => -1,
+		'orderby' => 'rand', 
 		'tax_query' => array(
 			array(
 				'taxonomy' => 'imagetag',

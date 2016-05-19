@@ -14,8 +14,6 @@
 			echo ' &mdash; ' . sprintf( __( 'Page %s' ), max( $paged, $page ) );
 		?></title>
 	
-		<meta name="author" content="Designed by Everything Type Company, http://www.etc-nyc.com/ | Developed by Marty Spellerberg, http://www.martyspellerberg.com/" />
-
 		<!-- Fav Icons: Browser, iOS, Windows 8 -->
 		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri() ?>/images/favicons/favicon.ico">
 		<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_stylesheet_directory_uri() ?>/images/favicons/favicon-114.png" />
@@ -25,7 +23,7 @@
 		<meta name="msapplication-TileColor" content="#000000"/> 
 		<meta name="msapplication-TileImage" content="<?php echo get_stylesheet_directory_uri() ?>/images/favicons/favicon-144.png"/>
 
-		<link href="//fnt.webink.com/wfs/webink.css/?project=3F9A2281-0205-420D-9C4C-F7FFB1920DFC&fonts=F06E7859-C7AE-7BC9-DA36-BA8CCFC1BFEC:f=PxGrotesk-BoldIta,B0CBCA70-418F-4482-421C-88B41ECCD5FA:f=PxGrotesk-Bold" rel="stylesheet" type="text/css"/>
+		<link rel="stylesheet" href="<?php echo bloginfo('template_url') ?>/webfonts/PxGroteskBold-Regular.css" type="text/css" media="screen" />
         
 		<?php wp_head(); ?>
 
@@ -73,7 +71,11 @@
 	</div>
 	</div>
 
-	<?php if ( !is_front_page() && !is_page('index') ) : ?>
+	<?php if ( is_page('friends') ) : ?>
+
+		<?php get_template_part('parts/breadcrumbs'); ?>
+
+	<?php elseif ( !is_front_page() && !is_page('index') ) : ?>
 
 		<?php get_template_part('parts/breadcrumbs'); ?>
 

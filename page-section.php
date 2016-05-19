@@ -3,7 +3,7 @@
 /* Template Name: Section */
 
 get_header(); ?>
-<div class="maxwidth"><div class="content">
+<div class="maxwidth"><div class="section thumbnails">
 
 		<?php if (have_posts()) : ?>
 
@@ -13,7 +13,9 @@ get_header(); ?>
 
 				$args = array(
 					'post_type' => 'page',
-					'parent' => $post->ID
+					'parent' => $post->ID ,
+					'sort_column' => 'menu_order'
+
 				);
 
 				$postslist = get_pages($args);
@@ -24,7 +26,15 @@ get_header(); ?>
 						<div class="thumb">
 							<div class="thumbinner">
 								<a href="<?php the_permalink(); ?>"><img src="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" /></a>
-								<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+								<h4>
+                                    <a href="<?php the_permalink(); ?>">
+										<?php the_title(); ?>
+                                        <?php if (is_page('archive')): ?>
+                                        	<?php $postid = get_the_ID(); ?>
+                                            <span class="_<?php echo $postid; ?>_year"> (<?php the_time('Y'); ?>)</span>
+                                        <?php endif; ?>
+                                    </a>
+                                </h4>
 						</div></div>
 				<?	endif;
 				endforeach; 

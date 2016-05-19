@@ -166,7 +166,7 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 		var feed = new Instafeed({
 			get: 'user',
 			userId: 636337139,
-		    accessToken: '262351.467ede5.176ab1984b1d47e6b8dea518109d7a5e',
+		    accessToken: '636337139.467ede5.4fbd829ee48d42ca9b54fbea4ece7c69',
 			link: 'true',
 			clientId: '80aeda87e8c44281b83ce6f542a30933',
 			limit: '1',

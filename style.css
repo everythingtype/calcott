@@ -9,7 +9,7 @@ Developed by Marty Spellerberg, http://www.martyspellerberg.com/
 
 */
 	
-body { font-family: 'PxGrotesk-Bold', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 20px; line-height: 1.5; background: #fff; color: #000; margin: 0; padding: 0; }
+body { font-family: 'PxGroteskBold', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 20px; line-height: 1.5; background: #fff; color: #000; margin: 0; padding: 0; }
 
 a {text-decoration: none; 
 	-webkit-transition: color 0.2s ease;
@@ -71,6 +71,7 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 .sitenav a:hover {color: #000;}
 
 .content { margin: 0 20px 60px 20px; position: relative; padding-top: 93px; }
+.section { margin: 0 0 60px 20px; position: relative; padding-top: 93px; }
 
 #loading { position: fixed; bottom: 0; width: 100%; z-index: 100; text-align: center; padding: 0 20px 20px 0; }
 #loading span { display: inline-block; font-size: 60px; color: #3e7be4;  padding: 15px 20px 20px 20px; }
@@ -93,6 +94,20 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 .home .column { width: 33.33333333333333%; float: left; }
 .home .column .padding { padding-right: 20px; }
 
+.links {  margin: 30px 20px 100px 20px; font-size: 20px; overflow: hidden; }
+
+.links ul{ list-style: none; margin:0; padding: 0; display: block; clear: both; overflow: hidden; display:inline;}
+.links ul li { margin:  0; padding: 0;  }
+.links ul li.headerterm { clear: both; overflow: hidden; display:block;}
+.links ul li.headerterm span {display: block; padding-bottom: 2px; margin-bottom: 5px; }
+.index ul li ul li { padding: 0; display: inline; margin: 0;}
+.links ul li ul li.linkcat {margin:0;}
+.links ul li ul li.linkcat span {background: #8a8b8e; color: #fff; margin: 0 10px 7px 0; padding: 0 .25em 2px .25em; display: block; float: left;}
+.links ul li ul li ul li { padding: 0; display: inline; }
+.links ul li ul li ul li a { background: #c4c5c7; color: #fff; margin: 0 10px 7px 0; padding: 0 .25em 2px .25em; display: block; float: left; }
+.links ul li ul li ul li a:hover {background: #8a8b8e;}
+
+
 .stripe h2 { display: none; }
 
 .thumbnails { overflow: hidden; margin-left: 20px; }
@@ -100,7 +115,9 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 .thumb .thumbinner {  padding: 0 20px 0 0; height: 100%; }
 .thumb img { max-height: 379px; }
 .thumb h4 { text-align: left; font-size: 14px; line-height: 1.2; margin: .25em 0;}
-.thumb a { color: #8a8b8e; }
+.thumb h5 { text-align: left; font-size: 12px; line-height: 1.2; margin: .25em 0;}
+.thumb a { color: #8a8b8e;}
+._442_year{ display:none;} /* Hides year in title of Misc Client Work on Archives page */
 
 #portfoliosblock { padding: 20px 0 100px 0; }
 #portfoliosblock .inner { }
@@ -144,7 +161,10 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 #thetweet [data-scribe="element:url"]:before { content: "here";}
 #thetweet [data-scribe="element:url"] span {display: none}
 
+#thetweet a[data-pre-embedded="true"] {display: none}
+
 #tumblr .box {text-align: center; }
+.simple { height: 100%; }
 
 #infoblock { line-height: 1.25; background: #3e7be4; color: #fff;  }
 #infoblock .inner {  padding: 123px 0 100px 20px; overflow: hidden; }
@@ -159,10 +179,10 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 }
 #infoblock a:hover { border-color: #fff; }
 
-#mce-EMAIL { background: #3e7be4; border: 2px solid #fff; color: #fff; font-family: 'PxGrotesk-Bold', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 20px; line-height: 1; width: 100%; padding: .5em; box-sizing: border-box; }
+#mce-EMAIL { background: #3e7be4; border: 2px solid #fff; color: #fff; font-family: 'PxGroteskBold', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; font-size: 20px; line-height: 1; width: 100%; padding: .5em; box-sizing: border-box; }
 #mce-EMAIL::-webkit-input-placeholder { color: #fff; }
 #mce-EMAIL:-moz-placeholder { color: #fff; }
-#mc-embedded-subscribe { background: #fff; border: none; border-radius: 1em; font-size: 14px; font-family: 'PxGrotesk-Bold', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; letter-spacing: 1px; text-transform: uppercase; color: #3e7be4; margin: 1em 0; padding: .5em 1em; }
+#mc-embedded-subscribe { background: #fff; border: none; border-radius: 1em; font-size: 14px; font-family: 'PxGroteskBold', sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; letter-spacing: 1px; text-transform: uppercase; color: #3e7be4; margin: 1em 0; padding: .5em 1em; }
 
 #otherblock { line-height: 1.25;  }
 
@@ -181,6 +201,11 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 .book img { max-height: 295px; }
 .book h4 { text-align: left; font-size: 14px; line-height: 1.2; margin: .25em 0;}
 #otherblock .book a { color: #8a8b8e; border-bottom: none; }
+
+.tears { text-align: center;  margin-bottom: 20px; line-height: 0; }
+.tears img { max-height: 295px; }
+.tears h4 { text-align: left; font-size: 14px; line-height: 1.2; margin: .25em 0;}
+#infoblock .tears a { border-bottom: none; }
 
 
 .stripeheader { background: #fff; overflow: hidden; }
@@ -280,6 +305,12 @@ a.blockanchor { border-bottom: none !important; }
 .slide .caption {display: none; }
 .slide img { max-height: 379px; }
 .slide a { display: block; }
+
+.slide_terms {width:220px; position:fixed; right:20px; bottom: 20px; text-align:right;}
+.slide_terms ul { list-style: none; margin: 0; padding: 0; display: block; clear: both; overflow: hidden; display:inline;}
+.slide_terms ul li { padding: 0; display: inline; }
+.slide_terms ul li a {background: #c4c5c7; color: #fff; margin: 0 10px 7px 0; padding: 0 .25em 2px .25em; display:inline-block;}
+.slide_terms ul li a:hover {background: #8a8b8e;}
 
 .js .slide  .slideinner { cursor: pointer; }
 

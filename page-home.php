@@ -51,13 +51,13 @@ get_header(); ?>
 
 					<h3>{{datetime:date}}</h3>
 
-					<div class="box"><div class="height"><div class="proportional">
+					<div class="box"><div class="height"><div class="proportional"><div class="simple">
 					{{if photoset_layout}}
 						{{for photos}}<img src="{{:~getPhotoURL(#view, 500)}}" />{{/for}}
 					{{else}}
 						<img src="{{for photos}}{{:~getPhotoURL(#view, 500)}}{{/for}}" />
 					{{/if}}
-					</div></div></div>
+					</div></div></div></div>
 
 				</script>
 
@@ -82,9 +82,10 @@ get_header(); ?>
 
 			<div class="also">
 				<p>Also see:<br />
-				<a href="https://www.facebook.com/nicholas.calcott">Facebook</a><br />
-				<a href="https://www.linkedin.com/pub/nicholas-calcott/1a/834/536">LinkedIn</a><br />
-				<a href="/feed/">RSS</a></p>
+				<a href="http://blink.la/u/calcott" target="_blank">Blink</a><br />
+                <a href="https://www.facebook.com/nicholas.calcott">Facebook</a><br />
+                <a href="https://www.linkedin.com/pub/nicholas-calcott/1a/834/536">LinkedIn</a>
+                </p>
 			</div>
 
 		</div></div>
@@ -101,22 +102,36 @@ get_header(); ?>
 
 				<?php get_template_part('parts/about'); ?>
 
+                <br/><br/>
+				<h3>Contact</h3>
+
+				<?php get_template_part('parts/contact'); ?>
+
+				<br/><br/>
 			</div></div>
 			<div class="column"><div class="padding">
-				<h3>Clients</h3>
+				<h3>Selected Clients</h3>
 
 				<?php get_template_part('parts/clients'); ?>
 
 			</div></div>
 			<div class="column"><div class="padding">
-				<h3>Contact</h3>
+                 <h3><span>Selected Tearsheets</span></h3>
+                
+                <?php get_template_part('parts/tears'); ?>
+                
+                <br/><br/>
 
-				<?php get_template_part('parts/contact'); ?>
 
-				<h4><span>Subscribe</span></h4>
+               <h3>Website</h3>
+                
+                <?php get_template_part('parts/siteinfo'); ?>
+
+				<br/><br/>
+                <h3><span>Newsletter</span></h3>
 
 				<?php get_template_part('parts/newsletter'); ?>
-
+                
 			</div></div>
 		</div></div>
 	</div><!-- about -->
@@ -128,17 +143,29 @@ get_header(); ?>
 
 		<div class="maxwidth"><div class="inner">
 			<div class="column"><div class="padding">
-				<h3>Exhibitions</h3>
-				<?php get_template_part('parts/exhibitions'); ?>
-			</div></div>
-			<div class="column"><div class="padding">
-				<h3>Artist&rsquo;s Books</h3>
-					<?php get_template_part('parts/books'); ?>
-					<p><a href="/books/">See All Artists Books</a></p>
-			</div></div>
-			<div class="column"><div class="padding">
 				<h3>Texts</h3>
 				<?php get_template_part('parts/texts'); ?>
+				<p>&nbsp;</p>
+				<h3>Bibliography</h3>
+				<?php get_template_part('parts/bibliography'); ?>
+			</div></div>
+			<div class="column"><div class="padding">
+				<!-- <h3>Exhibitions</h3>
+				<?php get_template_part('parts/exhibitions'); ?>
+				<p>&nbsp;</p> -->
+				<h3>Collectives & Artists' Groups</h3>
+				<?php get_template_part('parts/collectives'); ?>
+				<p>&nbsp;</p>
+				<h3>Awards</h3>
+				<?php get_template_part('parts/awards'); ?>
+				<p>&nbsp;</p>
+				<h3>Teaching</h3>
+				<?php get_template_part('parts/teaching'); ?>
+			</div></div>
+			<div class="column"><div class="padding">
+				<h3>Artist Books</h3>
+					<?php get_template_part('parts/books'); ?>
+					<p><a href="/books/">See All Artists Books</a></p>
 			</div></div>
 		</div></div>
 	</div><!-- other -->

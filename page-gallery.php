@@ -23,12 +23,26 @@ get_header(); ?>
 
 					<?php 
 					$imageids = Array();
+					$imageset = Array();
 
 					$rows = get_field('images'); 
 					foreach($rows as $row) : 
+
 						if ( $row['image'] ) : 
-							$imageids[] = $row['image']['id'];
+
+							if ( !in_array($row['image']['id'],$imageids) ) :
+
+								$imageset[] = array(
+									'display_size' => $row['display_size'],
+									'id' => $row['image']['id']
+								);
+
+								$imageids[] = $row['image']['id'];
+
+							endif;
+
 						endif;
+
 					endforeach;
 
 					// Sub Pages
@@ -44,16 +58,27 @@ get_header(); ?>
 
 						$rows = get_field('images'); 
 						foreach($rows as $row) : 
+
 							if ( $row['image'] ) : 
-								$imageids[] = $row['image']['id'];
+
+								if ( !in_array($row['image']['id'],$imageids) ) :
+
+									$imageset[] = array(
+										'display_size' => $row['display_size'],
+										'id' => $row['image']['id']
+									);
+
+									$imageids[] = $row['image']['id'];
+
+								endif;
+
 							endif;
+
 						endforeach;
 				
 					endforeach;
 
-					$imageids = array_unique($imageids);
-
-					the_calcott_gallery($imageids); 
+					the_calcott_sized_gallery($imageset); 
 				
 					?>
 

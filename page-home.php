@@ -4,30 +4,30 @@
 
 get_header(); ?>
 
-<a id="portfolios" class="blockanchor"></a>
+<a id="initial" class="blockanchor"></a>
 
 <div class="home">
 
+	<div id="carouselblock" class="stripe">
+
+		<div class="maxwidth">
+			<div class="padding">
+			<?php get_template_part('parts/carousel'); ?>
+			</div>
+		</div>
+	</div><!-- carousel -->
+
+	<a id="portfolios" class="blockanchor"></a>
 	<div id="portfoliosblock" class="stripe">
 
 		<h2>Portfolios</h2>
 
-		<div class="maxwidth"><div class="thumbnails">
-			<?php get_template_part('parts/portfolios'); ?>
-		</div></div>
-	</div><!-- portfolios -->
-
-	<a id="projects" class="blockanchor"></a>
-	<div id="projectsblock" class="stripe">
-
-		<h2>Projects</h2>
-
 		<div class="inner"><div class="maxwidth">
 			<div class="thumbnails">
-				<?php get_template_part('parts/projects'); ?>
+			<?php get_template_part('parts/portfolios'); ?>
 			</div>
 		</div></div>
-	</div><!-- projects -->
+	</div><!-- portfolios -->
 
 	<div id="updatesblock" class="stripe">
 

@@ -3,38 +3,28 @@
 		<a class="close" title="Close"><span>Close</span></a>
 		<h2>News</h2>
 
-<?php
+		<?php
 
-$theslug = get_ID_by_slug('news');
+		$myposts = get_posts(array( 'posts_per_page' => 1, 'category' => 1 ));
 
-$args = array(
-	'post_type' => 'page',
-	'include' => $theslug
-);
+		foreach ( $myposts as $post ) : 
+			setup_postdata( $post ); ?>
 
-$postslist = get_pages($args);
+			<div class="item">
+				<h3><?php the_time('F j, Y'); ?></h3>
+				<?php the_content(); ?>
+				<?php if ( has_post_thumbnail() ) : ?>
+					<?php the_post_thumbnail(); ?>
+				<?php endif; ?>
+			</div>
 
-foreach ($postslist as $post) : setup_postdata($post);
-
-	$rows = get_field('item');
-	$count = 1; 
-
-	foreach($rows as $row) :
-		if ( $count < 4 ) :
-			echo '<div class="item">';
-				if ( $row['when'] ) echo '<h3>' . $row['when'] . '</h3>';
-				if ( $row['what'] ) echo wpautop( $row['what'] );
-				if ( $row['image'] ) echo '<img src="' . $row['image']['sizes']['large'] . '" alt="" />';
-			echo '</div>';
-			$count++;
-		endif;
-	endforeach;
-
-endforeach; 
-
-wp_reset_postdata();
-
-?>
+		<?php 
+			endforeach; 
+			wp_reset_postdata();
+		?>
+		<div class="item">
+			<p><a class="readmore" href="/category/news/">Read more</a></p>
+		</div>
 
 	</div>
 </div>

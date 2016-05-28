@@ -1,6 +1,10 @@
 <div class="maxwidth">
 	<div class="footer">
+
 		<div class="address">
+
+			<h3>Contact</h3>
+
 			<p><a href="mailto:n@nicholascalcott.com">n@nicholascalcott.com</a><br />
 			+1 (646) 331 5786<br />
 			191 Norman Ave. Apt 3C<br />
@@ -24,7 +28,13 @@
 
 </div>
 
+</div>
+
+<?php get_template_part('parts/nav-mobile'); ?>
+
 <div id="loading"></div>
+
+<div class="responsivecue"></div>
 
 <?php wp_footer(); ?>
 

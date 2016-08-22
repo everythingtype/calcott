@@ -54,7 +54,7 @@ function the_calcott_gallery($imageids) {
 			$img_alt = $img_title; 
 		endif;
 
-		$output .= '<div class="slide" id="slide' . $i . '"><div class="slideinner">';
+		$output .= '<div class="slide colspan-one" id="slide' . $i . '"><div class="slideinner">';
 
 		$output .= '<a class="gallery" href="' . $large_url . '" data-caption="';
 

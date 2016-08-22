@@ -6,6 +6,10 @@ require_once( 'functions/enqueue.php' );
 require_once( 'functions/gallery.php' );
 require_once( 'functions/tagging.php' );
 
+
+add_filter( 'pre_option_link_manager_enabled', '__return_true' );
+
+
 function theme_slug_setup() {
    add_theme_support( 'title-tag' );
 }

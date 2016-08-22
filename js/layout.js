@@ -74,7 +74,7 @@
 
 	function setupLayout() {
 
-		console.log('setupLayout');
+		// console.log('setupLayout');
 
 		$('body').addClass('js');
 

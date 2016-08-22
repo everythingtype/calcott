@@ -6,6 +6,7 @@ $theslug = get_ID_by_slug('carousel');
 
 $args = array(
 	'post_type' => 'page',
+	'sort_column' => 'post_date',
 	'include' => $theslug
 );
 
@@ -16,6 +17,9 @@ foreach ($pages as $post) : setup_postdata($post); ?>
 <div class="frames">
 <?
 	$rows = get_field('images'); 
+
+	shuffle($rows);
+
 	foreach($rows as $row) :
 
 		$image = $row['image'];

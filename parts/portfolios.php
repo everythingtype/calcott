@@ -16,7 +16,18 @@ foreach ($postslist as $post) : setup_postdata($post);
 		<div class="thumb">
 			<div class="thumbinner">
 				<a href="<?php the_permalink(); ?>"><img src="<?php echo $large_image_url[0]; ?>" alt="<?php the_title_attribute(); ?>" /></a>
-				<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+				<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?>
+					<span class="projectdates">
+						 - <?php 
+							$post_id = $post->ID;
+							$projectdates = get_post_meta($post_id, 'date_of_project', true);
+							if ( isset($projectdates) ) {
+								echo $projectdates;
+								};
+						?>
+					</span>  
+                </a></h4>
+
 		</div></div>
 <?	endif;
 endforeach; 

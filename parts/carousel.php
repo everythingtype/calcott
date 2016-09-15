@@ -23,11 +23,18 @@ foreach ($pages as $post) : setup_postdata($post); ?>
 	foreach($rows as $row) :
 
 		$image = $row['image'];
+		$caption = $row['caption'];
 
 		if ( $image ) : 
 ?>
 
-	<div class="frame"><div class="frameimage" style="background-image: url('<?php echo $image['sizes']['large'];?>'); "><div class="ratio"></div></div>
+	<div class="frame">
+	
+	<div class="frameimage" style="background-image: url('<?php echo $image['sizes']['full-width'];?>'); ">
+		<div class="ratio"></div>
+	</div>
+	<div class="carouselcaption"><?php echo $caption;?></div>
+
 
 	</div>
 

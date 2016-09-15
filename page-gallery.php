@@ -19,6 +19,8 @@ get_header(); ?>
 					</div></div>
 				<?php endif; ?>
 
+				<div class="infoboxspacer"></div>
+
 				<div class="slideshow">
 
 					<?php 

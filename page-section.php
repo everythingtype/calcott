@@ -31,7 +31,13 @@ get_header(); ?>
 										<?php the_title(); ?>
                                         <?php if (is_page('archive')): ?>
                                         	<?php $postid = get_the_ID(); ?>
-                                            <span class="_<?php echo $postid; ?>_year"> (<?php the_time('Y'); ?>)</span>
+                                            <span class="_<?php echo $postid; ?>_year"> (<?php 
+												$post_id = $post->ID;
+												$projectdates = get_post_meta($post_id, 'date_of_project', true);
+												if ( isset($projectdates) ) {
+													echo $projectdates;
+												};
+											?>)</span>
                                         <?php endif; ?>
                                     </a>
                                 </h4>

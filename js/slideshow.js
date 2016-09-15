@@ -2,6 +2,9 @@
 
 	function setupGrid() {
 
+		var pagetitleHeight = $('.pagetitle').outerHeight();
+		$('.infoboxspacer').height( pagetitleHeight + 'px' );
+
 		var contentWidth = $('.content').outerWidth() + 20;
 		$('.slideshow').width( contentWidth + 'px' );
 
@@ -14,6 +17,9 @@
 			itemSelector: '.thumb',
 			transitionDuration: "0"
 		});
+
+
+
 
 	}
 
@@ -37,7 +43,7 @@
 		setupGrid();
 
 		if ( $('.infobox').length ) {
-			$('.pagetitle').find('h2').append('<a title="Info" class="showinfo">Info</a>');
+			$('.pagetitle').find('h2').append('<span><a title="Info" class="showinfo">Info</a></span>');
 			$('.infobox').draggable();
 		}
 

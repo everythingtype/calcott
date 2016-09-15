@@ -31,11 +31,16 @@
 /* Carousel */
 
 #carouselblock { padding: 0 20px; text-align: center;  overflow: hidden; }
-#carouselblock .frames { width: 100%; height: 100%; }
-#carouselblock .frame { width: 100%; height: 100%;  padding: 20px 0; box-sizing: border-box;   }
+#carouselblock .frames { width: 100%; height: 100%;}
+#carouselblock .frame { width: 100%; height: 100%;  padding: 0 20px; box-sizing: border-box;   }
 #carouselblock .frameimage { width: 100%; height: 100%; background-size: contain; background-position: center center; background-repeat: no-repeat; }
 
 	#carouselblock .ratio { padding-top: 100%; }
+.carouselcaption {margin-top:-35px; text-align: left; height:20px; padding:0; width:100%; font-size: .9em;}
+.carouselcaption a{}
+.carouselcaption p{margin:0; padding:0;}
+.carouselcaption a{color:#000; border-bottom: medium solid #8a8b8e;}
+
 
 @media screen and (min-width: 950px) {
 	#carouselblock .ratio { padding-top: 0; }
@@ -47,6 +52,7 @@
 #portfoliosblock { background: #000; color: #fff; }
 #portfoliosblock a { color: #8a8b8e; }
 #portfoliosblock .inner { padding: 0 0 100px 0; }
+.projectdates { font-size: .8em; }
 
 @media screen and (min-width: 950px) {
 
@@ -214,7 +220,7 @@ a.blockanchor { border-bottom: none !important; }
 	#news .item a.readmore { color: #8a8b8e; border-bottom: 1px solid #8a8b8e; }
 	#news .item a.readmore:hover { border-color: #8a8b8e; }
 
-	#news a.close { cursor: pointer; float: right; display: block; width: 19px; height: 19px; background: url('images/close.svg') center center no-repeat; }
+	#news a.close { cursor: pointer; float: right; display: block; width: 19px; height: 19px; background: url('../images/close.svg') center center no-repeat; }
 	#news a.close span { display: none; }
 
 	.js #news:hover { cursor: move; }

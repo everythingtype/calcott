@@ -102,6 +102,9 @@ function the_calcott_sized_gallery($imageset) {
 		$imageid = $image['id'];
 		$display_size = $image['display_size'];
 	
+		$fullsize = image_downsize( $imageid, 'full-width' );
+		$full_url = $fullsize[0];
+		
 		$largesize = image_downsize( $imageid, 'large' );
 		$large_url = $largesize[0];
 
@@ -155,7 +158,7 @@ function the_calcott_sized_gallery($imageset) {
 		if ( $display_size == 'one' ) :
 			$outputurl = $medium_url;
 		else :
-			$outputurl = $large_url;
+			$outputurl = $full_url;
 		endif;
 		
 		$output .= '"><img src="' . $outputurl . '" alt="' . $img_alt . '" />';

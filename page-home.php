@@ -39,7 +39,13 @@ get_header(); ?>
 
 			<div class="column"><div class="padding">
 
-					<div id="instafeed"></div>
+					<!-- Commenting out instafeed until functionality is restored - Adding a placeholder box/image
+						<div id="instafeed"></div> 
+					-->
+					<div class="box"><div class="height"><div class="proportional"><div class="simple">
+						<img src="http://www.nicholascalcott.com/temp.jpg">
+					</div></div></div></div>
+					<!-- End placeholder box -->
 
 				<p class="handle"><a href="http://instagram.com/ncott">Instagram</a><br />
 				<em>@ncott</em></p>
@@ -49,7 +55,11 @@ get_header(); ?>
 
 				<script id="tmpl-photo" type="text/x-jsrender">
 
-					<h3>{{datetime:date}}</h3>
+				<!-- Commenting out date/time temporarily
+					<h3>
+							{{datetime:date}} 
+					</h3>
+				-->
 
 					<div class="box"><div class="height"><div class="proportional"><div class="simple">
 					{{if photoset_layout}}
@@ -69,6 +79,16 @@ get_header(); ?>
 
 			<div class="column"><div class="padding">
 
+				<div class="also">
+					<p>Also see:<br />
+					 <a href="https://twitter.com/NicholasCalcott" target="_blank">Twitter</a><br />
+					 <a href="https://app.blink.la/u/calcott" target="_blank">Blink</a><br />
+            	   	 <a href="https://www.facebook.com/nicholas.calcott">Facebook</a><br />
+   	    	         <a href="https://www.linkedin.com/pub/nicholas-calcott/1a/834/536">LinkedIn</a>
+    	            </p>
+				</div>
+				
+				<!-- 
 				<h3 id="thetweetdate">&nbsp;</h3>
 
 				<div class="box"><div class="height"><div class="proportional">
@@ -78,15 +98,9 @@ get_header(); ?>
 				</div></div></div>
 				<p class="handle"><a href="https://twitter.com/NicholasCalcott">Twitter</a><br />
 				<em>@NicholasCalcott</em></p>
+				-->
 			</div></div>
 
-			<div class="also">
-				<p>Also see:<br />
-				<a href="http://blink.la/u/calcott" target="_blank">Blink</a><br />
-                <a href="https://www.facebook.com/nicholas.calcott">Facebook</a><br />
-                <a href="https://www.linkedin.com/pub/nicholas-calcott/1a/834/536">LinkedIn</a>
-                </p>
-			</div>
 
 		</div></div>
 	</div><!-- updates -->
@@ -108,6 +122,9 @@ get_header(); ?>
 				<?php get_template_part('parts/contact'); ?>
 
 				<br/><br/>
+                <h3><span>Newsletter</span></h3>
+
+				<?php get_template_part('parts/newsletter'); ?>
 			</div></div>
 			<div class="column"><div class="padding">
 				<h3>Selected Clients</h3>
@@ -116,21 +133,15 @@ get_header(); ?>
 
 			</div></div>
 			<div class="column"><div class="padding">
-                 <h3><span>Selected Tearsheets</span></h3>
+            	<h3><span>Selected Tearsheets</span></h3>
                 
                 <?php get_template_part('parts/tears'); ?>
-                
+
                 <br/><br/>
-
-
+                
                <h3>Website</h3>
                 
                 <?php get_template_part('parts/siteinfo'); ?>
-
-				<br/><br/>
-                <h3><span>Newsletter</span></h3>
-
-				<?php get_template_part('parts/newsletter'); ?>
                 
 			</div></div>
 		</div></div>
@@ -143,18 +154,18 @@ get_header(); ?>
 
 		<div class="maxwidth"><div class="inner">
 			<div class="column"><div class="padding">
-				<h3>Texts</h3>
-				<?php get_template_part('parts/texts'); ?>
+				<h3>Selected Exhibitions</h3>
+				<?php get_template_part('parts/exhibitions'); ?>
+				<p>&nbsp;</p>
+				<h3>Collectives & Artists' Groups</h3>
+				<?php get_template_part('parts/collectives'); ?>
 				<p>&nbsp;</p>
 				<h3>Bibliography</h3>
 				<?php get_template_part('parts/bibliography'); ?>
 			</div></div>
 			<div class="column"><div class="padding">
-				<!-- <h3>Exhibitions</h3>
-				<?php get_template_part('parts/exhibitions'); ?>
-				<p>&nbsp;</p> -->
-				<h3>Collectives & Artists' Groups</h3>
-				<?php get_template_part('parts/collectives'); ?>
+				<h3>Texts</h3>
+				<?php get_template_part('parts/texts'); ?>
 				<p>&nbsp;</p>
 				<h3>Awards</h3>
 				<?php get_template_part('parts/awards'); ?>

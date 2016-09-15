@@ -36,7 +36,7 @@ function enqueue_scripts_method() {
 
 	$instafeedjs = get_template_directory_uri() . '/js/instafeed.min.js';
 	wp_register_script('instafeedjs',$instafeedjs, false, $version);
-
+	
 	$jsrenderjs = get_template_directory_uri() . '/js/jsrender.js';
 	wp_register_script('jsrenderjs',$jsrenderjs, false, $version);
 

@@ -99,10 +99,8 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 
 /**/
 
-.breadcrumbs { margin: 0 20px; color: #c4c5c7; position: relative; z-index: 3; font-size: 14px;}
-.breadcrumbs p { margin: 0; }
-.breadcrumbs a { color: #c4c5c7;}
-.breadcrumbs a:hover { color: #000;}
+.breadcrumbs { display: none; }
+
 
 
 .pagetitle { width: 100%; text-align: center; padding-top: 7px; position: fixed; top: 36px; left: 0; z-index: 2;
@@ -111,15 +109,15 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 	-o-transition: opacity 0.2s ease;
 	transition: opacity 0.2s ease;
 	}
-.pagetitle h2 { font-size: 60px; margin: 0; }
+.pagetitle h2 { font-size: 20px; margin: 11px 20px; line-height: 1; }
 .pagetitle a {color: #000;}
-.pagetitle a.showinfo { cursor: pointer; font-size: 20px; color: #fff; background: #000; padding: 0 .25em .125em .25em; margin-left: 1em; display: inline-block; line-height: 1.2; vertical-align: 25%; }
-.pagetitle a.showinfo.active {  }
+.pagetitle span { display: block; margin-top: 8px; }
+.pagetitle a.showinfo { display: inline-block; font-size: 14px;  cursor: pointer; color: #fff; background: #000; padding: 0 .25em .125em .25em; margin-left: 1em;  line-height: 1.2; vertical-align: 25%; }
 .pagetitle.active {opacity: 0.2; }
 
 
-.content { margin: 0 20px 60px 20px; position: relative; padding-top: 93px; }
-.section { margin: 0 0 60px 20px; position: relative; padding-top: 93px; }
+.content { margin: 0 20px 20px 20px; position: relative; }
+.section { margin: 0 0 60px 20px; position: relative; }
 
 #loading { position: fixed; bottom: 0; width: 100%; z-index: 100; text-align: center; padding: 0 20px 20px 0; }
 #loading span { display: inline-block; font-size: 60px; color: #3e7be4;  padding: 15px 20px 20px 20px; }
@@ -132,6 +130,26 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 	transition: border-color 0.2s ease;
 }
 .blankpage a:hover { border-color: #000; }
+
+@media screen and (min-width: 950px) {
+
+	.breadcrumbs { display: block; margin: 0 20px; color: #c4c5c7; position: relative; z-index: 3; font-size: 14px;}
+	.breadcrumbs p { margin: 0; }
+	.breadcrumbs a { color: #c4c5c7;}
+	.breadcrumbs a:hover { color: #000;}
+
+
+	.pagetitle h2 { font-size: 60px; margin: 15px 20px; }
+	.pagetitle span { display: inline; }
+	.pagetitle a.showinfo { font-size: 20px; }
+
+	.infoboxspacer { display: none; }
+
+	.content { margin: 0 20px 60px 20px; padding-top: 93px; }
+
+	.section { padding-top: 93px; }
+
+}
 
 /**/
 
@@ -191,9 +209,9 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 
 /* Gallery */
 
-.infobox { width: 100%; margin-top: 142px; position: absolute; top: 0; display: none; color: #8a8b8e; }
+.infobox {margin-top: 20px;  width: 100%;  position: absolute; top: 0; display: none; color: #8a8b8e; z-index: 3; }
 .infobox .inner { border: 2px solid #000; background: #fff; max-width: 731px; margin: auto; z-index: 1; position: relative; display: none;}
-.infobox .inner .padding { padding: 62px; }
+.infobox .inner .padding { padding: 50px 20px 0 20px; }
 .infobox h2 { margin: 0 0 1em 0; font-size: 20px; line-height: 1.1; color: #000;  }
 .infobox p { margin-top: 0; }
 .infobox a.close { cursor: pointer; float: right; display: block; width: 19px; height: 19px; margin: 20px; background: url('images/close.svg') center center no-repeat; }
@@ -204,11 +222,11 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 .slideshow {  }
 .slide { float: left; text-align: center;  margin-bottom: 20px;  line-height: 0;}
 
-.slide.colspan-one { width: 33.33333333333333%; }
-.slide.colspan-one img { max-height: 379px; }
+.slide.colspan-one { width: 50%; }
+.slide.colspan-one img { max-height: 569px; }
 
-.slide.colspan-two { width: 66.66666666666666%; }
-.slide.colspan-two img { max-height: 758px; }
+.slide.colspan-two { width: 100%; }
+.slide.colspan-two img { max-height: 1137px; }
 
 .slide.colspan-three { width: 100%; }
 .slide.colspan-three img { max-height: 1137px; }
@@ -245,7 +263,19 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 .detailview a {color: #8a8b8e; }
 
 @media screen and (min-width: 950px) {
-	
+
+	.infobox {margin-top: 142px; }
+	.infobox .inner .padding { padding: 62px; }
+
+	.slide.colspan-one { width: 33.33333333333333%; }
+	.slide.colspan-one img { max-height: 379px; }
+
+	.slide.colspan-two { width: 66.66666666666666%; }
+	.slide.colspan-two img { max-height: 758px; }
+
+	.slide.colspan-three { width: 100%; }
+	.slide.colspan-three img { max-height: 1137px; }
+
 }
 
 /* Footer */

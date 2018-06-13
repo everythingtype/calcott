@@ -139,9 +139,7 @@ function the_calcott_sized_gallery($imageset) {
 		if ( $img_caption ) $output .= $img_caption;
 		
 		if ( $img_parent ) {
-				$output .= ' (<a href=\'' . $imgparent_url . '\'>' . $imgparent_name . '</a>' ;
-				if ( $imgparent_name != 'Miscellaneous Client Work') $output .= ', ' . $imgparent_date ;
-				$output .= ')' ;
+				$output .= ' (<a href=\'' . $imgparent_url . '\'>' . $imgparent_name . '</a>' . ')' ;
 			}
 	
 		if ( $img_terms ) {

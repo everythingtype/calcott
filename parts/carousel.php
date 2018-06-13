@@ -17,8 +17,10 @@ foreach ($pages as $post) : setup_postdata($post); ?>
 <div class="frames">
 <?
 	$rows = get_field('images'); 
-
 	shuffle($rows);
+
+	$rowcount = count($rows);
+	$framecount = 1;
 
 	foreach($rows as $row) :
 
@@ -30,15 +32,21 @@ foreach ($pages as $post) : setup_postdata($post); ?>
 
 	<div class="frame">
 	
-	<div class="frameimage" style="background-image: url('<?php echo $image['sizes']['full-width'];?>'); ">
-		<div class="ratio"></div>
-	</div>
-	<div class="carouselcaption"><?php echo $caption;?></div>
-
+		<div class="frameimagewrap">
+			<div class="frameimage" style="background-image: url('<?php echo $image['sizes']['full-width'];?>'); ">
+				<div class="ratio"></div>
+			</div>
+		</div>
+		<div class="carouselcaption">
+			<?php echo $caption;?>
+			<p class="captioncount"><?php echo sprintf("%02s", $framecount); ?>/<?php echo $rowcount; ?></p>
+		</div>
 
 	</div>
 
 <?
+			$framecount++;
+
 		endif;
 
 	endforeach;

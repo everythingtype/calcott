@@ -61,4 +61,6 @@ function get_ID_by_slug($page_slug) {
 //full width image size
 add_image_size( 'full-width', 1420, 9999 );
 
+add_image_size( 'homethumbs', 264, 397, true );
+
 ?>

@@ -60,7 +60,18 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 
 			var carouselheight = windowheight - topHeaderHeight;
 
-			$('.frame').css({'height': carouselheight + 'px'});
+//			$('.frame').css({'height': carouselheight + 'px'});
+
+			$('.frame').each( function() {
+
+				var captionheight = $(this).find('.carouselcaption').outerHeight();
+				var frameheight = carouselheight - captionheight;
+
+				$(this).find('.frameimagewrap').css({'height': frameheight + 'px'});
+				$(this).css({'height': carouselheight + 'px'});
+
+			});
+
 			$('#fixedtitle').css('top', topHeaderHeight + 'px');
 
 		} else {
@@ -79,8 +90,7 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 
 				if ( currentTitle != 'portfolio' ) {
 					currentTitle = 'portfolio';
-					$('#portfoliosblock').pinTitle();	
-					$('#fixedtitle').addClass('white');
+					$('#portfoliosblock').pinTitle();
 				}
 
 			} else if ( $('#updatesblock').isScrolledIntoView() ) {
@@ -88,7 +98,6 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 				if ( currentTitle != 'updates' ) {
 					currentTitle = 'updates';
 					$('#updatesblock').pinTitle();
-					$('#fixedtitle').removeClass('white');
 				}
 
 			} else if ( $('#infoblock').isScrolledIntoView() ) {
@@ -96,7 +105,6 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 				if ( currentTitle != 'info' ) {
 					currentTitle = 'info';
 					$('#infoblock').pinTitle();
-					$('#fixedtitle').addClass('white');
 				}
 
 			} else if ( $('#otherblock').isScrolledIntoView() ) {
@@ -104,7 +112,6 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 				if ( currentTitle != 'other' ) {
 					currentTitle = 'other';
 					$('#otherblock').pinTitle();
-					$('#fixedtitle').removeClass('white');
 				}
 
 			} else {
@@ -183,14 +190,14 @@ var TUMBLR_HOSTNAME = "blog.nicholascalcott.com";
 		var feed = new Instafeed({
 			get: 'user',
 			userId: 636337139,
-		    accessToken: '636337139.467ede5.4fbd829ee48d42ca9b54fbea4ece7c69',
+		    accessToken: '636337139.1677ed0.b742b254e0ed4a50aa8369074a5b47ab',
 			link: 'true',
 			clientId: '80aeda87e8c44281b83ce6f542a30933',
 			limit: '1',
 			sortBy: 'most-recent',
 			resolution: 'standard_resolution',
 			links: false,
-			template: '<h3>{{model.created_time}} {{model.tagsFormatted}}</h3><img src="{{image}}" />',
+			template: '<img src="{{image}}" />',
 			filter: function(image) {
 
 				var date = new Date(image.created_time*1000);

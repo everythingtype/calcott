@@ -2,7 +2,7 @@
 
 function enqueue_scripts_method() {
 
-	$version = "o";
+	$version = "c";
 
 	// Remove Unnecessary Code
 	// http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
@@ -86,7 +86,7 @@ function enqueue_scripts_method() {
 	if ( is_front_page() ) :
 
 		wp_enqueue_script( 'flickityjs');
-		wp_enqueue_script( 'twitterjs');
+//		wp_enqueue_script( 'twitterjs');
 		wp_enqueue_script( 'instafeedjs');
 		wp_enqueue_script( 'jsrenderjs',array('jquery'));
 		wp_enqueue_script( 'tumblrkitjs',array('jquery','jsrenderjs'));

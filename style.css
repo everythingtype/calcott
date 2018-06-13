@@ -1,5 +1,5 @@
 /*
-Theme Name: Nicholas Calcott
+Theme Name: Calcott 2b
 Theme URI: http://github.com/everythingtype/calcott
 Author: Marty Spellerberg
 Author URI: http://www.martyspellerberg.com/
@@ -155,7 +155,7 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 
 .thumbnails { overflow: hidden; margin-left: 20px; }
 .thumb { float: left; width: 50%; text-align: center;  margin-bottom: 20px; line-height: 0; }
-.thumb .thumbinner {  padding: 0 20px 0 0; height: 100%; }
+.thumb .thumbinner {  padding: 0 20px 0 0; height: 100%; margin: 0 auto; display: inline-block; }
 .thumb img { max-height: 379px; }
 .thumb h4 { text-align: left; font-size: 14px; line-height: 1.2; margin: .25em 0;}
 .thumb h5 { text-align: left; font-size: 12px; line-height: 1.2; margin: .25em 0;}
@@ -163,18 +163,14 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 ._442_year{ display:none;} /* Hides year in title of Misc Client Work on Archives page */
 
 @media screen and (min-width: 950px) {
-	.thumb { width: 33.33333333333333%; }
+	.thumb { width: 33%; }
+	.thumb_home { width: 33%; }
 }
 
 
 /* Index*/
 
-.index { margin: 30px 20px 100px 20px; font-size: 20px; overflow: hidden; 
-	-moz-column-count: 3;
-	-moz-column-gap: 20px;
-	-webkit-column-count: 3;
-	-webkit-column-gap: 20px; 
-}
+.index { margin: 30px 20px 100px 20px; font-size: 20px; overflow: hidden; }
 
 .index a {
 	-webkit-transition: background 0.2s ease;
@@ -206,6 +202,22 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 .index a.yellow { background: #fddd33; }
 
 .index a:hover { color: #fff; background: #000; }
+
+@media screen and (min-width: 600px) {
+	.index {
+		-moz-column-gap: 20px;
+		-webkit-column-gap: 20px; 
+		-moz-column-count: 2;
+		-webkit-column-count: 2;
+	}
+}
+
+@media screen and (min-width: 950px) {
+	.index {
+		-moz-column-count: 3;
+		-webkit-column-count: 3;
+	}
+}
 
 /* Gallery */
 
@@ -278,9 +290,24 @@ h1, h2, h3, h4, h5 { font-weight: normal; }
 
 }
 
+/* Links/Friends */
+
+#links {  margin: 30px 20px 100px 20px; font-size: 20px; overflow: hidden; }
+
+#links ul{ list-style: none; margin:0; padding: 0; display: block; clear: both; overflow: hidden; display:inline;}
+#links ul li { margin:  0; padding: 0;  }
+#links ul li.headerterm { clear: both; overflow: hidden; display:block;}
+#links ul li.headerterm span {display: block; padding-bottom: 2px; margin-bottom: 5px; }
+#links ul li ul li { padding: 0; display: inline; margin: 0;}
+#links ul li ul li.linkcat {margin:0;}
+#links ul li ul li.linkcat span {background: #8a8b8e; color: #fff; margin: 0 10px 7px 0; padding: 0 .25em 2px .25em; display: block; float: left;}
+#links ul li ul li ul li { padding: 0; display: inline; }
+#links ul li ul li ul li a { background: #c4c5c7; color: #fff; margin: 0 10px 7px 0; padding: 0 .25em 2px .25em; display: block; float: left; }
+#links ul li ul li ul li a:hover {background: #8a8b8e;}
+
 /* Footer */
 
-.footer { overflow: hidden; border-top: 2px solid #E2E2E3; clear: both; margin: 0 20px 40px 20px; }
+.footer { overflow: hidden; border-top: 2px solid #E2E2E3; clear: both; margin: 0 20px 40px 20px; padding-top: 30px;}
 .footer a { color: #000; border-bottom: 2px solid #a7a8aa;
 	-webkit-transition: border-color 0.2s ease;
 	-moz-transition: border-color 0.2s ease;

@@ -5,6 +5,23 @@
 
 		<?php
 
+		$myposts = get_posts(array( 'posts_per_page' => 1, 'category' => 215 ));
+
+		foreach ( $myposts as $post ) : 
+			setup_postdata( $post ); ?>
+
+			<div class="item">
+				<h3>Travel Notice:</h3>
+				<?php the_content(); ?>
+			</div>
+
+		<?php 
+			endforeach; 
+			wp_reset_postdata();
+		?>
+
+		<?php
+
 		$myposts = get_posts(array( 'posts_per_page' => 1, 'category' => 1 ));
 
 		foreach ( $myposts as $post ) : 

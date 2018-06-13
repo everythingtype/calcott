@@ -4,7 +4,7 @@ $theslug = get_ID_by_slug('books');
 
 $args = array(
 	'post_type' => 'page',
-	'number' => 2 ,
+	'number' => 3 ,
 	'sort_column' => 'menu_order',
 	'sort_order' => 'desc',
 	'parent' => $theslug

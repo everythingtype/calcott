@@ -4,7 +4,7 @@
 
 get_header(); ?>
 
-		<div class="maxwidth"><div class="links">
+		<div class="maxwidth"><div id="links">
 				<ul>
                     <li class="headerterm">
                     	<span>Friends</span>

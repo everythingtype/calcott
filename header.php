@@ -33,12 +33,22 @@
 			<?php get_template_part('parts/nav-desktop'); ?>
 
 		<div class="line"></div>
+			<?php $post_id = $post->ID; //if upcoming/small news travel exists then...
+				$travel = get_post_meta($post_id, 'upcoming_travel', true);
+				$smallnews = get_post_meta($post_id, 'small_news', true);
+				if ( $travel != '' ) { ?>
+				<p class="smallnews"> <span class="newslabel">Upcoming Travel:</span> &nbsp; <?php echo $travel; ?> </p>
+				<?php };
+				if ( $smallnews != '') { ?> 
+				<p class="smallnews"> <span class="newslabel">News:</span>  &nbsp; <?php echo $smallnews; ?> </span>
+				<?php };
+			?>
+
 	</div></div>
 </div>
 </div>
 
 <div class="scrollingcontent">
-
 <div class="layout">
 
 	<?php if ( is_page('friends') ) : ?>
@@ -59,4 +69,3 @@
 		</div>
 
 	<?php endif; ?>
-
